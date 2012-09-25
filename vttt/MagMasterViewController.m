@@ -20,7 +20,7 @@ static BOOL mostraIcone = false;
 static BOOL vistaDB = FALSE;
 static BOOL vistaArticoli = NO;
 static BOOL vistaArticoliDB = YES;
-
+static BOOL vistaArticoliDbInCategory = YES;
 static BOOL debugMode = NO;
 
 static BOOL alfabeticOrder;
@@ -387,6 +387,29 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
+
+- (void)regolaVistaDB:(BOOL)alfabetic {
+    
+    if (alfabetic) {
+        
+        self.articoliAz = [self listaArticoli];
+        self.dicArticoli = nil;
+        self.category = nil;
+        
+        /*if (vistaArticoli)
+         [self inizializzaArticolo];
+         */
+        if (vistaDB)
+            self.articoliAz = [self viewDB];
+    }
+    else {
+        
+        self.articoliAz = nil;
+        self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
+        self.category = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    }
+}
+
 - (IBAction)pressChageTypeListButton:(id)sender {
         
     [self chageViewOrderWithPosition:[self.changeTypeListButton selectedSegmentIndex]];
@@ -415,21 +438,13 @@ static NSString * const CellIdentifier = @"Cell";
             
         case 2:
             
-            if (debugMode) {
-                if (vistaArticoliDB) {
-                    
-                    [self inizializzaArticoloFromDB];
-                }
-                
-                [self inizializzaArticolo];
+            [self case2Method];
+            if (vistaArticoliDbInCategory) {
+                alfabeticOrder = FALSE;
+                vistaArticoli = FALSE;
+                [self regolaVista:alfabeticOrder];
 
             }
-            else {
-                
-                [self initFromDB];
-            }
-            alfabeticOrder = TRUE;
-            vistaArticoli = YES;
             break;
             
         default:
@@ -437,6 +452,26 @@ static NSString * const CellIdentifier = @"Cell";
     }
     
     [self.tableView reloadData];
+}
+
+- (void)case2Method {
+    if (debugMode) {
+        if (vistaArticoliDB) {
+            
+            [self inizializzaArticoloFromDB];
+        }
+        
+        [self inizializzaArticolo];
+        
+    }
+    else {
+        
+        [self initFromDB];
+    }
+    alfabeticOrder = TRUE;
+    vistaArticoli = YES;
+
+    
 }
 
 - (NSArray *)viewDB {
@@ -586,13 +621,6 @@ static NSString * const CellIdentifier = @"Cell";
     [tempArray addObject:@"4"];
     [tempArray addObject:@"5"];
     [tempArray addObject:@"6"];
-//    [tempArray addObject:@"7"];
-//    [tempArray addObject:@"8"];
-//    [tempArray addObject:@"9"];
-//    [tempArray addObject:@"10"];
-//    [tempArray addObject:@"11"];
-//    [tempArray addObject:@"12"];
-//    [tempArray addObject:@"13"];
 
     //--solo se la lista è lunga--
     if ([articoliAz count]>30) {
@@ -679,7 +707,6 @@ static NSString * const CellIdentifier = @"Cell";
     return [integerValue boolValue];
 
 }
-
 #pragma mark - Init Methods
 
 - (void)setSegmentedControl {
