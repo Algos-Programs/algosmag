@@ -1087,13 +1087,9 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-- (void)creaVistaCategoryWithArray:(NSArray *)array {
-    
-
-    
+- (NSDictionary *)creaVistaCategoryWithArray:(NSArray *)array {
     NSArray *categoryArray = [[NSArray alloc] init];
-    NSMutableArray *articoliArray = [[NSMutableArray alloc] init];
-    NSDictionary *articoliDictionary = [[NSDictionary alloc] init];
+    NSMutableDictionary *articoliDictionary = [[NSMutableDictionary alloc] init];
     categoryArray = [self categoryFromArray:array];  
     
     for (int i = 0; i < categoryArray.count; i++) {
@@ -1113,10 +1109,10 @@ static NSString * const CellIdentifier = @"Cell";
             }//end if
         }//end for
         
-        articoliDictionary = [NSDictionary dictionaryWithObject:arrayTemp forKey:categoryTemp];
+        [articoliDictionary setObject:arrayTemp forKey:categoryTemp];
     }//end for
     
-    int c = 3;
+    return articoliDictionary;
 }
 
 - (BOOL)categoryAlreadyExistWithString:(NSString *)categoria withArray:(NSArray *)array {
