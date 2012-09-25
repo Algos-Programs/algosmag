@@ -693,13 +693,11 @@ static NSString * const CellIdentifier = @"Cell";
     [self.changeTypeListButton setEnabled:YES forSegmentAtIndex:0];
     [self.changeTypeListButton setEnabled:YES forSegmentAtIndex:1];
     [self.changeTypeListButton setEnabled:YES forSegmentAtIndex:2];
-    [self.changeTypeListButton setEnabled:YES forSegmentAtIndex:3];
 
     //--- Inserisco i titoli su tutti i bottini del Segmented Control
     [self.changeTypeListButton setTitle:@"Az" forSegmentAtIndex:0];
     [self.changeTypeListButton setTitle:@"Category" forSegmentAtIndex:1];
-    [self.changeTypeListButton setTitle:@"Database" forSegmentAtIndex:2];
-    [self.changeTypeListButton setTitle:@"Articoli" forSegmentAtIndex:3];
+    [self.changeTypeListButton setTitle:@"Articoli" forSegmentAtIndex:2];
     
     //--- Dico quale section selezione in base alla fista di default
     switch (alfabeticOrder) {
