@@ -91,8 +91,8 @@
 		FF50AE8F15FCB89F009DA6C6 /* Articolo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articolo.h; sourceTree = "<group>"; };
 		FF50AE9015FCB89F009DA6C6 /* Articolo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articolo.m; sourceTree = "<group>"; };
 		FF50AE9C15FE4827009DA6C6 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		FF50AE9E15FE51AC009DA6C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		FF50AEA015FE5228009DA6C6 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57x57.png; sourceTree = "<group>"; };
+		FF50AE9E15FE51AC009DA6C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		FF50AEA015FE5228009DA6C6 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_57x57.png; path = ../icon_57x57.png; sourceTree = "<group>"; };
 		FFD373A815F90A1C00B67937 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FFF7625D15F8E67500D6048C /* LibDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibDatabase.h; sourceTree = "<group>"; };
 		FFF7625E15F8E67500D6048C /* LibDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibDatabase.m; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 		0EC84F2F15EA657E00273B38 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FF50AE9C15FE4827009DA6C6 /* background.jpg */,
 				B43327BF15F0B4470013B461 /* CurrencySelectorViewController.h */,
 				B43327C015F0B4470013B461 /* CurrencySelectorViewController.m */,
 				B4095F3415E777CC0088EEF3 /* MagMasterViewController.h */,
@@ -155,9 +154,6 @@
 		B4095F0815E777CC0088EEF3 = {
 			isa = PBXGroup;
 			children = (
-				FF50AEA015FE5228009DA6C6 /* icon_57x57.png */,
-				FF50AE9E15FE51AC009DA6C6 /* icon.png */,
-				FFD373A815F90A1C00B67937 /* libsqlite3.dylib */,
 				B4095F1F15E777CC0088EEF3 /* vttt */,
 				B4095F4715E777CC0088EEF3 /* vtttTests */,
 				B4095F1415E777CC0088EEF3 /* Products */,
@@ -203,12 +199,9 @@
 		B4095F2015E777CC0088EEF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF3964371611FCC3002DC3A1 /* Image */,
+				FFD373A815F90A1C00B67937 /* libsqlite3.dylib */,
 				0ED75BD815F770AF00EED929 /* Settings.bundle */,
-				B4FC1E2C15E908BB00DD7696 /* Romania.png */,
-				B4FC1E2E15E9092D00DD7696 /* Switzerland.png */,
-				B4FC1E2F15E9092D00DD7696 /* Ukraine.png */,
-				B4FC1E2815E9081000DD7696 /* Belgium.png */,
-				B4FC1E2515E907F600DD7696 /* Brazil.png */,
 				B4095F2115E777CC0088EEF3 /* vttt-Info.plist */,
 				B4095F2215E777CC0088EEF3 /* InfoPlist.strings */,
 				B4095F2515E777CC0088EEF3 /* main.m */,
@@ -236,6 +229,21 @@
 				B4095F4A15E777CC0088EEF3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF3964371611FCC3002DC3A1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				FF50AEA015FE5228009DA6C6 /* icon_57x57.png */,
+				FF50AE9E15FE51AC009DA6C6 /* icon.png */,
+				FF50AE9C15FE4827009DA6C6 /* background.jpg */,
+				B4FC1E2C15E908BB00DD7696 /* Romania.png */,
+				B4FC1E2E15E9092D00DD7696 /* Switzerland.png */,
+				B4FC1E2F15E9092D00DD7696 /* Ukraine.png */,
+				B4FC1E2815E9081000DD7696 /* Belgium.png */,
+				B4FC1E2515E907F600DD7696 /* Brazil.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 		FFF7625B15F8E65500D6048C /* Lib */ = {
