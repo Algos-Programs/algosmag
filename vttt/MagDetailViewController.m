@@ -52,11 +52,28 @@
 
     // Colore dello sfondo
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   NSString * backgroundColor = [defaults objectForKey:@"backgroundColor"];
+    NSString *backgroundColor = [defaults objectForKey:@"backgroundColor"];
 
-    
     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]]];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]]];
+ 
+    if ([backgroundColor isEqual:@"green"]) {
+        [self.view setBackgroundColor:[UIColor greenColor]];
+    } else {
+        if ([backgroundColor isEqual:@"yellow"]) {
+            [self.view setBackgroundColor:[UIColor yellowColor]];
+        } else {
+            if ([backgroundColor isEqual:@"pink"]) {
+                [self.view setBackgroundColor:[UIColor purpleColor]];
+            } else {
+                if ([backgroundColor isEqual:@"blue"]) {
+                    [self.view setBackgroundColor:[UIColor blueColor]];
+                } else {
+                    [self.view setBackgroundColor:[UIColor brownColor]];
+                }
+            }
+        }
+    }
 
     
     [super viewDidLoad];
