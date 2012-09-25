@@ -47,8 +47,15 @@
 
 - (void)viewDidLoad
 {
+    // Titolo della colonna di destra
+    self.navigationItem.title = NSLocalizedString(@"Scheda", @"Scheda");
+
+    // Colore dello sfondo
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   NSString * backgroundColor = [defaults objectForKey:@"backgroundColor"];
+
     
-    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage 
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]]];
 
     
