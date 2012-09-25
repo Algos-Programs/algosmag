@@ -27,7 +27,6 @@
 		B41F5B6915F0BCCC004AE2A6 /* articoli.plist in Resources */ = {isa = PBXBuildFile; fileRef = B41F5B6815F0BCCC004AE2A6 /* articoli.plist */; };
 		B422E29815F735EB00F76972 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */; };
 		B422E29915F735EB00F76972 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */; };
-		B43327BB15F0B4270013B461 /* ListaArticoli.m in Sources */ = {isa = PBXBuildFile; fileRef = B43327B915F0B4270013B461 /* ListaArticoli.m */; };
 		B43327C215F0B4470013B461 /* CurrencySelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43327C015F0B4470013B461 /* CurrencySelectorViewController.m */; };
 		B4FC1E2615E907F600DD7696 /* Brazil.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1E2515E907F600DD7696 /* Brazil.png */; };
 		B4FC1E2915E9081000DD7696 /* Belgium.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1E2815E9081000DD7696 /* Belgium.png */; };
@@ -80,8 +79,6 @@
 		B41F5B6815F0BCCC004AE2A6 /* articoli.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = articoli.plist; sourceTree = "<group>"; };
 		B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B43327B815F0B4270013B461 /* ListaArticoli.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaArticoli.h; sourceTree = "<group>"; };
-		B43327B915F0B4270013B461 /* ListaArticoli.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaArticoli.m; sourceTree = "<group>"; };
 		B43327BF15F0B4470013B461 /* CurrencySelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencySelectorViewController.h; sourceTree = "<group>"; };
 		B43327C015F0B4470013B461 /* CurrencySelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencySelectorViewController.m; sourceTree = "<group>"; };
 		B4FC1E2515E907F600DD7696 /* Brazil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brazil.png; sourceTree = "<group>"; };
@@ -131,8 +128,6 @@
 		0EC84F2D15EA657300273B38 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B43327B815F0B4270013B461 /* ListaArticoli.h */,
-				B43327B915F0B4270013B461 /* ListaArticoli.m */,
 				FF50AE8F15FCB89F009DA6C6 /* Articolo.h */,
 				FF50AE9015FCB89F009DA6C6 /* Articolo.m */,
 			);
@@ -387,7 +382,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4095F4F15E777CC0088EEF3 /* vtttTests.m in Sources */,
-				B43327BB15F0B4270013B461 /* ListaArticoli.m in Sources */,
 				B43327C215F0B4470013B461 /* CurrencySelectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
