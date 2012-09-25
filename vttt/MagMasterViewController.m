@@ -412,13 +412,8 @@ static NSString * const CellIdentifier = @"Cell";
             [self regolaVista:alfabeticOrder];
             break;
             
+            
         case 2:
-            
-            alfabeticOrder = TRUE;
-            vistaDB = TRUE;
-            break;
-            
-        case 3:
             
             if (debugMode) {
                 if (vistaArticoliDB) {
