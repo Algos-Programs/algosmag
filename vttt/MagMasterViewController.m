@@ -17,8 +17,6 @@
 
 static BOOL mostraIcone = false;
 
-#warning eliminare vistaDB
-static BOOL const vistaDB = YES;
 static BOOL vistaArticoli = NO;
 static BOOL vistaArticoliDB = YES;
 static BOOL vistaArticoliDbInCategory = NO;
@@ -58,7 +56,7 @@ static NSString * const CellIdentifier = @"Cell";
     self.navigationItem.title = NSLocalizedString(@"Lista", @"Lista");
     
     // Setting of Segmented Control
-    [self setSegmentedControl]; 
+    [self setSegmentedControl];
     
     if (alfabeticOrder)
         [self regolaVista:alfabeticOrder];
@@ -359,9 +357,9 @@ static NSString * const CellIdentifier = @"Cell";
 
 - (void)regolaVista:(BOOL)alfabetic {
     
-    if (alfabetic)
-        self.articoliAz = [self getAllArticoli];
-    
+    if (alfabetic) {
+            self.articoliAz = [self getAllArticoli];
+    }
     else {
         
         self.articoliAz = nil;
@@ -389,7 +387,6 @@ static NSString * const CellIdentifier = @"Cell";
         case 0:
             
             alfabeticOrder = TRUE;
-            //vistaDB = FALSE;
             vistaArticoli = NO;
             vistaArticoliDbInCategory = FALSE;
             [self regolaVista:alfabeticOrder];
@@ -407,7 +404,7 @@ static NSString * const CellIdentifier = @"Cell";
             
         case 2:
             
-#warning Riabilitare metodo
+        #warning Riabilitare metodo
             //[self case2Method];
                 alfabeticOrder = FALSE;
                 vistaArticoli = FALSE;
@@ -710,6 +707,7 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
+#warning Da Eliminare
 - (void)inizializza {
     
     //Prendo il path della mia plist
@@ -722,7 +720,13 @@ static NSString * const CellIdentifier = @"Cell";
     //--- Prendo tutte le CATEGORY
     NSArray *array = [[self.articoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
     self.categoryArticoli = array;
-    
+}
+
+- (void)inizializzaCategoryArticoli {
+        
+        self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
+        self.articoli = dicArticoli;
+        self.categoryArticoli = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
 
 }
 
@@ -757,9 +761,7 @@ static NSString * const CellIdentifier = @"Cell";
     [self insertRecordIntoNamed:@"Articoli" codeValue:@"001" nameValue:@"Rossa" categoryValue:@"Vernici" descriptionValue:@"Vernice Rossa" priceValue:@"54€"];
     [self insertRecordIntoNamed:@"Articoli" codeValue:@"002" nameValue:@"Verde" categoryValue:@"Vernici" descriptionValue:@"Vernice Verde" priceValue:@"90€"];
     [self insertRecordIntoNamed:@"Articoli" codeValue:@"003" nameValue:@"Gialla" categoryValue:@"Vernici" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
-    
     [self insertRecordIntoNamed:@"Articoli" codeValue:@"004" nameValue:@"Gialla" categoryValue:@"Cacca" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
-    
     [self insertRecordIntoNamed:@"Articoli" codeValue:@"005" nameValue:@"Gialla" categoryValue:@"Puppu" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
     
 }
