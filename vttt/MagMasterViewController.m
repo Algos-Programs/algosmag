@@ -5,7 +5,6 @@
 //
 //  Created by Grails on 24/08/12.
 //  Copyright (c) 2012 algos. All rights reserved.
-//  marco
 
 
 #import "MagMasterViewController.h"
@@ -17,7 +16,7 @@
 @end
 
 static BOOL mostraIcone = false;
-static BOOL vistaDB = FALSE;
+static BOOL const vistaDB = YES;
 static BOOL vistaArticoli = NO;
 static BOOL vistaArticoliDB = YES;
 static BOOL vistaArticoliDbInCategory = NO;
@@ -28,6 +27,7 @@ static NSString * typeList;
 static BOOL mostraTotaleArticloli;
 
 static NSString * const NamePlist = @"articoli";
+static NSString * const TableName = @"Articoli";
 static NSString * const CellIdentifier = @"Cell";
 
 
@@ -146,8 +146,11 @@ static NSString * const CellIdentifier = @"Cell";
             cell.textLabel.text = [art code];
     }
     
-    else if (alfabeticOrder)
-        cell.textLabel.text = [articoliAz objectAtIndex:indexPath.row];
+    else if (alfabeticOrder) {
+        
+        Articolo *art = [articoliAz objectAtIndex:indexPath.row];
+        cell.textLabel.text = art.code;
+    }
 
     else {
         
@@ -372,7 +375,7 @@ static NSString * const CellIdentifier = @"Cell";
             [self inizializzaArticolo];
         */
         if (vistaDB)
-            self.articoliAz = [self viewDB];
+            self.articoliAz = [self getAllArticoli];
     }
     else {
         
@@ -424,7 +427,7 @@ static NSString * const CellIdentifier = @"Cell";
         case 0:
             
             alfabeticOrder = TRUE;
-            vistaDB = FALSE;
+            //vistaDB = FALSE;
             vistaArticoli = NO;
             vistaArticoliDbInCategory = FALSE;
             [self regolaVista:alfabeticOrder];
@@ -481,7 +484,7 @@ static NSString * const CellIdentifier = @"Cell";
 
 - (NSArray *)viewDB {
     
-    NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM %@", @"pippo"];
+    NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM %@", TableName];
     sqlite3_stmt *statment;
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
@@ -1015,10 +1018,10 @@ static NSString * const CellIdentifier = @"Cell";
             
             [tempArray addObject:(Articolo *)art];
             NSString *str = [[NSString alloc] initWithFormat:@"%@ - %@ - %@ - %@ - %@", field1Str, field2Str, field3Str, field4Str, field5Str];
-            NSLog(@"%@", str);
+            //NSLog(@"%@", str);
             
         }
-        [self creaVistaCategoryWithArray:tempArray];
+        //[self creaVistaCategoryWithArray:tempArray];
         
         //-- Delete the compiler statment from memory
         sqlite3_finalize(statment);
