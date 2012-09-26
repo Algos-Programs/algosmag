@@ -215,7 +215,7 @@ static NSString * const CellIdentifier = @"Cell";
         //self.detailViewController.detailItem = [NSString stringWithFormat:@"%@", [dicArticoli objectAtIndex:indexPath.row]];
         
         if (articoliAz) {
-            if (vistaArticoli) {
+            //if (vistaArticoli) {
   
                 Articolo *art = [articoliAz objectAtIndex:indexPath.row];
                 //-- Disabilito l'editing x i textField
@@ -233,9 +233,9 @@ static NSString * const CellIdentifier = @"Cell";
                 self.detailViewController.priceTextField.text = [NSString stringWithFormat:@"%@",[art price]];
 
 
-            }
+           /* }
             else
-                self.detailViewController.detailItem = [NSString stringWithFormat:@"%@", [articoliAz objectAtIndex:indexPath.row]];
+                self.detailViewController.detailItem = [NSString stringWithFormat:@"%@", [articoliAz objectAtIndex:indexPath.row]];*/
 
         }
         else {
