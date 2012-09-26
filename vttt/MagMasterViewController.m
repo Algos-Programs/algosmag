@@ -20,7 +20,7 @@ static BOOL mostraIcone = false;
 static BOOL vistaDB = FALSE;
 static BOOL vistaArticoli = NO;
 static BOOL vistaArticoliDB = YES;
-static BOOL vistaArticoliDbInCategory = YES;
+static BOOL vistaArticoliDbInCategory = NO;
 static BOOL debugMode = NO;
 
 static BOOL alfabeticOrder;
@@ -84,39 +84,6 @@ static NSString * const CellIdentifier = @"Cell";
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     self.detailViewController = (MagDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
- 
-    //****************
-    /*
-    NSMutableArray *listaOggetti = [[NSMutableArray alloc] init];
-	
-	NSArray *arrayAnimali = [NSArray arrayWithObjects:@"Cane", @"Gatto", @"Coniglio", @"Criceto", @"Cavallo", nil];
-	NSDictionary *dictAnimali = [NSDictionary dictionaryWithObject:arrayAnimali forKey:@"Elementi"];
-    
-	NSArray *arrayOggetti = [NSArray arrayWithObjects:@"Armadio", @"Pentola", @"Ruota", @"iPhone", nil];
-	NSDictionary *dictOggetti = [NSDictionary dictionaryWithObject:arrayOggetti forKey:@"Elementi"];
-	
-	NSArray *arrayNomi = [NSArray arrayWithObjects:@"Mario", @"Nicole", @"Simona", @"Daniel", @"Francesco", nil];
-	NSDictionary *dictNomi = [NSDictionary dictionaryWithObject:arrayNomi forKey:@"Elementi"];
-	
-	[listaOggetti addObject:dictAnimali];
-	[listaOggetti addObject:dictOggetti];
-	[listaOggetti addObject:dictNomi];
-	
-	NSMutableArray *listaDettaglioOggetti = [[NSMutableArray alloc] init];
-	
-	NSArray *arrayDettaglioAnimali = [NSArray arrayWithObjects:@"Animale 1", @"Animale 2", @"Animale 3", @"Animale 4", @"Animale 5", nil];
-	NSDictionary *dictDettaglioAnimali = [NSDictionary dictionaryWithObject:arrayDettaglioAnimali forKey:@"dettaglioElementi"];
-	
-	NSArray *arrayDettaglioOggetti = [NSArray arrayWithObjects:@"Oggetto 1", @"Oggetto 2", @"Oggetto 3", @"Oggetto 4", nil];
-	NSDictionary *dictDettaglioOggetti = [NSDictionary dictionaryWithObject:arrayDettaglioOggetti forKey:@"dettaglioElementi"];
-	
-	NSArray *arrayDettaglioNomi = [NSArray arrayWithObjects:@"Nome 1", @"Nome 2", @"Nome 3", @"Nome 4", @"Nome 5", nil];
-	NSDictionary *dictDettaglioNomi = [NSDictionary dictionaryWithObject:arrayDettaglioNomi forKey:@"dettaglioElementi"];
-	
-	[listaDettaglioOggetti addObject:dictDettaglioAnimali];
-	[listaDettaglioOggetti addObject:dictDettaglioOggetti];
-	[listaDettaglioOggetti addObject:dictDettaglioNomi];
-     */
     
 }
 
@@ -199,11 +166,7 @@ static NSString * const CellIdentifier = @"Cell";
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -225,6 +188,12 @@ static NSString * const CellIdentifier = @"Cell";
 {
     // The table view should not be re-orderable.
     return NO;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -274,17 +243,6 @@ static NSString * const CellIdentifier = @"Cell";
         //NSObject *obj= [NSString stringWithFormat:@"%@", [articoliAz objectAtIndex:indexPath.section]];
     }
 }
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
-    }
-}
-
-//--display the header--
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
     if (alfabeticOrder) {
@@ -294,7 +252,7 @@ static NSString * const CellIdentifier = @"Cell";
         
         NSString *categoryTemp = [self.categoryArticoli objectAtIndex:section];
         NSArray *articoliTemp = [self.articoli objectForKey:categoryTemp];
-
+        
         //--- Se nella Sezione non ci sono articoli, non la mostro.
         if (articoliTemp.count == 0) {
             
@@ -302,7 +260,7 @@ static NSString * const CellIdentifier = @"Cell";
         }
         
         return categoryTemp;
-
+        
     }
 }
 
@@ -313,7 +271,7 @@ static NSString * const CellIdentifier = @"Cell";
     if (alfabeticOrder & mostraTotaleArticloli) {
         NSInteger articoliNum = [articoliAz count];
         return[[NSString alloc] initWithFormat:@"Nel magazzino ci sono %d articoli", articoliNum];
-
+        
     } else {
         return nil;
     }
@@ -322,9 +280,9 @@ static NSString * const CellIdentifier = @"Cell";
 //--display della singola cella--
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     //if (indexPath.row == 0 || indexPath.row%2 == 0) {
-        
-        //UIColor *altCellColor = [UIColor colorWithWhite:0.3 alpha:0.2];
-        //cell.backgroundColor = altCellColor;
+    
+    //UIColor *altCellColor = [UIColor colorWithWhite:0.3 alpha:0.2];
+    //cell.backgroundColor = altCellColor;
     //}
 }
 
@@ -340,6 +298,17 @@ static NSString * const CellIdentifier = @"Cell";
     return 40;
     //return 40 + 30 * ([indexPath row] % 2);
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+//--display the header--
 
 #pragma mark - Change List Methods
 
@@ -365,6 +334,7 @@ static NSString * const CellIdentifier = @"Cell";
     //[typeListButton setImage:icon];
 }
 
+#warning QUI
 - (void)regolaVista:(BOOL)alfabetic {
     
     if (alfabetic) {
@@ -382,7 +352,11 @@ static NSString * const CellIdentifier = @"Cell";
     else {
         
         self.articoliAz = nil;
-        self.dicArticoli = [self getDictionaryArticoli];
+        if (vistaArticoliDbInCategory)
+            self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
+        else 
+            self.dicArticoli = [self getDictionaryArticoli];
+        
         self.category = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
     }
 }
@@ -438,13 +412,14 @@ static NSString * const CellIdentifier = @"Cell";
             
         case 2:
             
-            [self case2Method];
-            if (vistaArticoliDbInCategory) {
+#warning Riabilitare metodo
+            //[self case2Method];
                 alfabeticOrder = FALSE;
                 vistaArticoli = FALSE;
+                vistaArticoliDbInCategory = TRUE;
                 [self regolaVista:alfabeticOrder];
 
-            }
+            
             break;
             
         default:

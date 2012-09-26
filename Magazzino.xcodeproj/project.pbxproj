@@ -27,13 +27,11 @@
 		B41F5B6915F0BCCC004AE2A6 /* articoli.plist in Resources */ = {isa = PBXBuildFile; fileRef = B41F5B6815F0BCCC004AE2A6 /* articoli.plist */; };
 		B422E29815F735EB00F76972 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */; };
 		B422E29915F735EB00F76972 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */; };
-		B43327C215F0B4470013B461 /* CurrencySelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B43327C015F0B4470013B461 /* CurrencySelectorViewController.m */; };
 		B4FC1E2615E907F600DD7696 /* Brazil.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1E2515E907F600DD7696 /* Brazil.png */; };
 		B4FC1E2915E9081000DD7696 /* Belgium.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1E2815E9081000DD7696 /* Belgium.png */; };
 		B4FC1E2D15E908BB00DD7696 /* Romania.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1E2C15E908BB00DD7696 /* Romania.png */; };
 		B4FC1E3015E9092D00DD7696 /* Switzerland.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1E2E15E9092D00DD7696 /* Switzerland.png */; };
 		B4FC1E3115E9092D00DD7696 /* Ukraine.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FC1E2F15E9092D00DD7696 /* Ukraine.png */; };
-		FF50AAE115FA2A2A009DA6C6 /* MagAggiungiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF50AAE015FA2A2A009DA6C6 /* MagAggiungiViewController.m */; };
 		FF50AE9115FCB89F009DA6C6 /* Articolo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF50AE9015FCB89F009DA6C6 /* Articolo.m */; };
 		FF50AE9D15FE4828009DA6C6 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF50AE9C15FE4827009DA6C6 /* background.jpg */; };
 		FF50AE9F15FE51AD009DA6C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AE9E15FE51AC009DA6C6 /* icon.png */; };
@@ -79,15 +77,11 @@
 		B41F5B6815F0BCCC004AE2A6 /* articoli.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = articoli.plist; sourceTree = "<group>"; };
 		B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B43327BF15F0B4470013B461 /* CurrencySelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencySelectorViewController.h; sourceTree = "<group>"; };
-		B43327C015F0B4470013B461 /* CurrencySelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencySelectorViewController.m; sourceTree = "<group>"; };
 		B4FC1E2515E907F600DD7696 /* Brazil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brazil.png; sourceTree = "<group>"; };
 		B4FC1E2815E9081000DD7696 /* Belgium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belgium.png; sourceTree = "<group>"; };
 		B4FC1E2C15E908BB00DD7696 /* Romania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Romania.png; sourceTree = "<group>"; };
 		B4FC1E2E15E9092D00DD7696 /* Switzerland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switzerland.png; sourceTree = "<group>"; };
 		B4FC1E2F15E9092D00DD7696 /* Ukraine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ukraine.png; sourceTree = "<group>"; };
-		FF50AADF15FA2A2A009DA6C6 /* MagAggiungiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagAggiungiViewController.h; sourceTree = "<group>"; };
-		FF50AAE015FA2A2A009DA6C6 /* MagAggiungiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagAggiungiViewController.m; sourceTree = "<group>"; };
 		FF50AE8F15FCB89F009DA6C6 /* Articolo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Articolo.h; sourceTree = "<group>"; };
 		FF50AE9015FCB89F009DA6C6 /* Articolo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articolo.m; sourceTree = "<group>"; };
 		FF50AE9C15FE4827009DA6C6 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -137,16 +131,10 @@
 		0EC84F2F15EA657E00273B38 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B43327BF15F0B4470013B461 /* CurrencySelectorViewController.h */,
-				B43327C015F0B4470013B461 /* CurrencySelectorViewController.m */,
 				B4095F3415E777CC0088EEF3 /* MagMasterViewController.h */,
 				B4095F3515E777CC0088EEF3 /* MagMasterViewController.m */,
 				B4095F3715E777CC0088EEF3 /* MagDetailViewController.h */,
 				B4095F3815E777CC0088EEF3 /* MagDetailViewController.m */,
-				B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */,
-				B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */,
-				FF50AADF15FA2A2A009DA6C6 /* MagAggiungiViewController.h */,
-				FF50AAE015FA2A2A009DA6C6 /* MagAggiungiViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -199,6 +187,8 @@
 		B4095F2015E777CC0088EEF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */,
+				B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */,
 				FF3964371611FCC3002DC3A1 /* Image */,
 				FFD373A815F90A1C00B67937 /* libsqlite3.dylib */,
 				0ED75BD815F770AF00EED929 /* Settings.bundle */,
@@ -380,7 +370,6 @@
 				B4095F3615E777CC0088EEF3 /* MagMasterViewController.m in Sources */,
 				B4095F3915E777CC0088EEF3 /* MagDetailViewController.m in Sources */,
 				FFF7625F15F8E67500D6048C /* LibDatabase.m in Sources */,
-				FF50AAE115FA2A2A009DA6C6 /* MagAggiungiViewController.m in Sources */,
 				FF50AE9115FCB89F009DA6C6 /* Articolo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +379,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4095F4F15E777CC0088EEF3 /* vtttTests.m in Sources */,
-				B43327C215F0B4470013B461 /* CurrencySelectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
