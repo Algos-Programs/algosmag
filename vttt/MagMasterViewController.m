@@ -16,6 +16,8 @@
 @end
 
 static BOOL mostraIcone = false;
+
+#warning eliminare vistaDB
 static BOOL const vistaDB = YES;
 static BOOL vistaArticoli = NO;
 static BOOL vistaArticoliDB = YES;
@@ -57,34 +59,27 @@ static NSString * const CellIdentifier = @"Cell";
     
     // Setting of Segmented Control
     [self setSegmentedControl]; 
-
-    //Only iPhone
-    [typeListButton setTitle:@"+"];
     
-    if (alfabeticOrder) {
+    if (alfabeticOrder)
         [self regolaVista:alfabeticOrder];
 
-    } else {
-        
+    else 
         [self inizializza];
-    }
     
-    //[self inizializzaArticolo];
-
+    //Apro DB
     [self openDB];
 
     //-- Creo e Riempio la tabella Articoli con 3 oggetti.
     [self insertDefaultArticles];
-    
-    [self getAllRowsFromArticoli];
-    
-    [super viewDidLoad];
+        
     
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     self.detailViewController = (MagDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
+    [super viewDidLoad];
+
 }
 
 - (void)viewDidUnload
@@ -362,21 +357,11 @@ static NSString * const CellIdentifier = @"Cell";
     //[typeListButton setImage:icon];
 }
 
-#warning QUI
 - (void)regolaVista:(BOOL)alfabetic {
     
-    if (alfabetic) {
-        
-        self.articoliAz = [self listaArticoli];
-        self.dicArticoli = nil;
-        self.category = nil;
-        
-        /*if (vistaArticoli)
-            [self inizializzaArticolo];
-        */
-        if (vistaDB)
-            self.articoliAz = [self getAllArticoli];
-    }
+    if (alfabetic)
+        self.articoliAz = [self getAllArticoli];
+    
     else {
         
         self.articoliAz = nil;
@@ -389,29 +374,6 @@ static NSString * const CellIdentifier = @"Cell";
             self.dicArticoli = [self getDictionaryArticoli];
         
         self.categoryArticoli = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    }
-}
-
-
-- (void)regolaVistaDB:(BOOL)alfabetic {
-    
-    if (alfabetic) {
-        
-        self.articoliAz = [self listaArticoli];
-        self.dicArticoli = nil;
-        self.category = nil;
-        
-        /*if (vistaArticoli)
-         [self inizializzaArticolo];
-         */
-        if (vistaDB)
-            self.articoliAz = [self viewDB];
-    }
-    else {
-        
-        self.articoliAz = nil;
-        self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
-        self.category = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
     }
 }
 
