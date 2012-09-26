@@ -153,8 +153,13 @@ static NSString * const CellIdentifier = @"Cell";
         
         NSString *categoryTemp = [self.categoryArticoli objectAtIndex:[indexPath section]];
         NSArray *articoliTemp = [self.articoli objectForKey:categoryTemp];
-        
-        cell.textLabel.text = [articoliTemp objectAtIndex:[indexPath row]];
+        if (vistaArticoliDbInCategory) {
+            
+            Articolo *art = [articoliTemp objectAtIndex:[indexPath row]];
+            cell.textLabel.text = art.code;
+        }
+        else
+            cell.textLabel.text = [articoliTemp objectAtIndex:[indexPath row]];
     }
     
     //--- Mostra Icone
@@ -352,12 +357,15 @@ static NSString * const CellIdentifier = @"Cell";
     else {
         
         self.articoliAz = nil;
-        if (vistaArticoliDbInCategory)
+        if (vistaArticoliDbInCategory) {
+            
             self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
+            self.articoli = dicArticoli;
+        }
         else 
             self.dicArticoli = [self getDictionaryArticoli];
         
-        self.category = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
+        self.categoryArticoli = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
     }
 }
 
@@ -398,6 +406,7 @@ static NSString * const CellIdentifier = @"Cell";
             alfabeticOrder = TRUE;
             vistaDB = FALSE;
             vistaArticoli = NO;
+            vistaArticoliDbInCategory = FALSE;
             [self regolaVista:alfabeticOrder];
 
             break;
@@ -405,6 +414,7 @@ static NSString * const CellIdentifier = @"Cell";
         case 1:
             
             alfabeticOrder = FALSE;
+            vistaArticoliDbInCategory = FALSE;
             vistaArticoli = NO;
             [self regolaVista:alfabeticOrder];
             break;
@@ -841,9 +851,7 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-
-- (void) insertRecordInPippoWithfield1Value:(NSString *)field1Value field2Value:(NSString *)field2Value
-{
+- (void) insertRecordInPippoWithfield1Value:(NSString *)field1Value field2Value:(NSString *)field2Value {
     
     [self insertRecordIntoNamed:@"pippo" withField1:@"code" field1Value:field1Value andField2:@"name" field2Value:field2Value];
 }
@@ -873,6 +881,7 @@ static NSString * const CellIdentifier = @"Cell";
 
 
 }
+
 - (void)getObjectFromTableName:(NSString *)tableName {
     
     NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM %@", tableName];
@@ -894,10 +903,6 @@ static NSString * const CellIdentifier = @"Cell";
         sqlite3_finalize(statment);
     }
 }
-
-
-
-
 
 - (void)getAllRowsFromTableNamed:(NSString *)tableName {
     
@@ -1061,8 +1066,7 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-- (void)insertNewObject:(id)sender
-{
+- (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
