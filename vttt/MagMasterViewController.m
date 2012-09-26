@@ -236,11 +236,31 @@ static NSString * const CellIdentifier = @"Cell";
 
         }
         else {
-            
+
             NSString *categoryTemp = [self.categoryArticoli objectAtIndex:indexPath.section];
             NSArray *articoliTemp = [self.articoli objectForKey:categoryTemp];
-            NSObject *obj = [articoliTemp objectAtIndex:indexPath.row];
-            self.detailViewController.detailItem = [NSString stringWithFormat:@"%@", obj];
+            if (vistaArticoliDbInCategory) {
+                
+                Articolo *art = [articoliTemp objectAtIndex:indexPath.row];
+                //-- Disabilito l'editing x i textField
+                [self.detailViewController.codeTextField setEnabled:NO];
+                [self.detailViewController.nameTextField setEnabled:NO];
+                [self.detailViewController.categoryTextField setEnabled:NO];
+                [self.detailViewController.descritpionTextField setEnabled:NO];
+                [self.detailViewController.priceTextField setEnabled:NO];
+                
+                //-- Riempio i textField.
+                self.detailViewController.codeTextField.text = [NSString stringWithFormat:@"%@", [art code]];
+                self.detailViewController.nameTextField.text = [NSString stringWithFormat:@"%@", [art name]];
+                self.detailViewController.categoryTextField.text = [NSString stringWithFormat:@"%@", [art category]];
+                self.detailViewController.descritpionTextField.text = [NSString stringWithFormat:@"%@", [art description]];
+                self.detailViewController.priceTextField.text = [NSString stringWithFormat:@"%@",[art price]];
+
+            }//end if
+            else {
+                NSObject *obj = [articoliTemp objectAtIndex:indexPath.row];
+                self.detailViewController.detailItem = [NSString stringWithFormat:@"%@", obj];
+            }
         }
         
         //[dicArticoli objectForKey:indexPath.section];
