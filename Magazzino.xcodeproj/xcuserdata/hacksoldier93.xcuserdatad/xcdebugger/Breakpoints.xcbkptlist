@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370383310.025862"
+         timestampString = "370470548.003024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1087"
-         endingLineNumber = "1087"
+         startingLineNumber = "1105"
+         endingLineNumber = "1105"
          landmarkName = "-creaVistaCategoryWithArray:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "104"
-         endingLineNumber = "104"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
          landmarkName = "-numberOfSectionsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "120"
-         endingLineNumber = "120"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
          landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "142"
+         endingLineNumber = "142"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "175"
-         endingLineNumber = "175"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
          landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "203"
-         endingLineNumber = "203"
+         startingLineNumber = "210"
+         endingLineNumber = "210"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "211"
-         endingLineNumber = "211"
+         startingLineNumber = "218"
+         endingLineNumber = "218"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "270"
-         endingLineNumber = "270"
+         startingLineNumber = "277"
+         endingLineNumber = "277"
          landmarkName = "-tableView:titleForHeaderInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "293"
-         endingLineNumber = "293"
+         startingLineNumber = "300"
+         endingLineNumber = "300"
          landmarkName = "-tableView:titleForFooterInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470405.939799"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "236"
-         endingLineNumber = "236"
+         startingLineNumber = "243"
+         endingLineNumber = "243"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470548.003024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "446"
-         endingLineNumber = "446"
+         startingLineNumber = "460"
+         endingLineNumber = "460"
          landmarkName = "-viewDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,24 +164,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382876.783837"
+         timestampString = "370470548.003024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "467"
-         endingLineNumber = "467"
+         startingLineNumber = "481"
+         endingLineNumber = "481"
          landmarkName = "-viewDB"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382872.919972"
+         timestampString = "370470548.003024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "386"
-         endingLineNumber = "386"
+         startingLineNumber = "402"
+         endingLineNumber = "402"
          landmarkName = "-chageViewOrderWithPosition:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370382906.410653"
+         timestampString = "370470574.826472"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,12 +203,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370383310.025862"
+         timestampString = "370470548.003024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "714"
-         endingLineNumber = "714"
-         landmarkName = "-inizializzaArticoliDaPlist"
+         startingLineNumber = "732"
+         endingLineNumber = "732"
+         landmarkName = "-inizializza"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -216,25 +216,64 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370383327.244099"
+         timestampString = "370470548.003024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "726"
-         endingLineNumber = "726"
+         startingLineNumber = "744"
+         endingLineNumber = "744"
          landmarkName = "-inizializzaCategoryArticoli"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagMasterViewController.m"
+         timestampString = "370470548.003024"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "401"
+         endingLineNumber = "401"
+         landmarkName = "-chageViewOrderWithPosition:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370383622.45941"
+         timestampString = "370470548.003024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "385"
-         endingLineNumber = "385"
-         landmarkName = "-chageViewOrderWithPosition:"
+         startingLineNumber = "685"
+         endingLineNumber = "685"
+         landmarkName = "-loadSettings"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagMasterViewController.m"
+         timestampString = "370470548.003024"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "699"
+         endingLineNumber = "699"
+         landmarkName = "-setSegmentedControl"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagMasterViewController.m"
+         timestampString = "370470405.939799"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "367"
+         endingLineNumber = "367"
+         landmarkName = "-regolaVista:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

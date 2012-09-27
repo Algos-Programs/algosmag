@@ -51,24 +51,31 @@ static NSString * const CellIdentifier = @"Cell";
 
 - (void)viewDidLoad
 {
+    //Apro DB
+    [self openDB];
     
+    //-- Creo e Riempio la tabella Articoli con 3 oggetti.
+    [self insertDefaultArticles];
+
     // Titolo della colonna di sinistra
     self.navigationItem.title = NSLocalizedString(@"Lista", @"Lista");
     
+    //[self loadSettings];
+        
     // Setting of Segmented Control
     [self setSegmentedControl];
     
     if (alfabeticOrder)
         [self regolaVista:alfabeticOrder];
 
-    else 
-        [self inizializza];
-    
-    //Apro DB
-    [self openDB];
+    else {
+        
+        vistaArticoliDbInCategory = YES;
+        [self regolaVista:NO];
 
-    //-- Creo e Riempio la tabella Articoli con 3 oggetti.
-    [self insertDefaultArticles];
+    }
+        //[self inizializza];
+    
         
     
 	// Do any additional setup after loading the view, typically from a nib.
@@ -367,11 +374,20 @@ static NSString * const CellIdentifier = @"Cell";
             
             self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
             self.articoli = dicArticoli;
+            NSLog(@"dicArticoli = %@", self.dicArticoli.description);
+            NSLog(@"articoli = %@", self.articoli.description);
+
         }
-        else 
+        else {
+            
             self.dicArticoli = [self getDictionaryArticoli];
+            NSLog(@"dicArticoli = %@", self.dicArticoli.description);
+        }
+
         
         self.categoryArticoli = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
+        NSLog(@"categoryArticoli = %@", self.categoryArticoli.description);
+
     }
 }
 
@@ -396,23 +412,21 @@ static NSString * const CellIdentifier = @"Cell";
         case 1:
             
             alfabeticOrder = FALSE;
+            vistaArticoli = FALSE;
+            vistaArticoliDbInCategory = TRUE;
+            [self regolaVista:alfabeticOrder];
+            break;
+
+        case 2:
+            /*
+            alfabeticOrder = FALSE;
             vistaArticoliDbInCategory = FALSE;
             vistaArticoli = NO;
             [self regolaVista:alfabeticOrder];
+             */
             break;
             
             
-        case 2:
-            
-        #warning Riabilitare metodo
-            //[self case2Method];
-                alfabeticOrder = FALSE;
-                vistaArticoli = FALSE;
-                vistaArticoliDbInCategory = TRUE;
-                [self regolaVista:alfabeticOrder];
-
-            
-            break;
             
         default:
             break;
@@ -606,6 +620,9 @@ static NSString * const CellIdentifier = @"Cell";
 //--- legge dictionary
 //--- crea lista articoli
 
+#warning QUI!
+
+
 - (NSArray *)listaArticoli {
     static NSString *namePlist = @"articoli";
     
@@ -658,6 +675,7 @@ static NSString * const CellIdentifier = @"Cell";
 
 }
 
+ 
 #pragma mark - Settings Mehods
 
 - (void)loadSettings {
@@ -666,7 +684,7 @@ static NSString * const CellIdentifier = @"Cell";
     
     alfabeticOrder = [self convertIntegerToBoolean:[defaults objectForKey:@"alfabeticOrder"]];
     mostraTotaleArticloli = [self convertIntegerToBoolean:[defaults objectForKey:@"mostraTotaleArticoli"]];
-    typeList = [defaults objectForKey:@"sezioni"];
+    typeList = [defaults objectForKey:@"alfabeticOrder"];
 }
 
 - (BOOL)convertIntegerToBoolean:(id)integerValue {
@@ -677,7 +695,7 @@ static NSString * const CellIdentifier = @"Cell";
 #pragma mark - Init Methods
 
 - (void)setSegmentedControl {
-    
+#warning HERE!
     //--- Abilito il click su tutti i bottoni del Segmented Control
     [self.changeTypeListButton setEnabled:YES forSegmentAtIndex:0];
     [self.changeTypeListButton setEnabled:YES forSegmentAtIndex:1];
