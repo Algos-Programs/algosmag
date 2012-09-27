@@ -37,6 +37,7 @@
 		FF50AE9F15FE51AD009DA6C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AE9E15FE51AC009DA6C6 /* icon.png */; };
 		FF50AEA115FE5228009DA6C6 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AEA015FE5228009DA6C6 /* icon_57x57.png */; };
 		FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698B1614F1F700FEC2FA /* LibPlist.m */; };
+		FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */; };
 		FFD373A915F90A1C00B67937 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD373A815F90A1C00B67937 /* libsqlite3.dylib */; };
 		FFF7625F15F8E67500D6048C /* LibDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF7625E15F8E67500D6048C /* LibDatabase.m */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,8 @@
 		FF50AEA015FE5228009DA6C6 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_57x57.png; path = ../icon_57x57.png; sourceTree = "<group>"; };
 		FF8B698A1614F1F700FEC2FA /* LibPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibPlist.h; sourceTree = "<group>"; };
 		FF8B698B1614F1F700FEC2FA /* LibPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibPlist.m; sourceTree = "<group>"; };
+		FF8B698E1614F5EB00FEC2FA /* LibArticolo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibArticolo.h; sourceTree = "<group>"; };
+		FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibArticolo.m; sourceTree = "<group>"; };
 		FFD373A815F90A1C00B67937 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FFF7625D15F8E67500D6048C /* LibDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibDatabase.h; sourceTree = "<group>"; };
 		FFF7625E15F8E67500D6048C /* LibDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibDatabase.m; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				FFF7625E15F8E67500D6048C /* LibDatabase.m */,
 				FF8B698A1614F1F700FEC2FA /* LibPlist.h */,
 				FF8B698B1614F1F700FEC2FA /* LibPlist.m */,
+				FF8B698E1614F5EB00FEC2FA /* LibArticolo.h */,
+				FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				FFF7625F15F8E67500D6048C /* LibDatabase.m in Sources */,
 				FF50AE9115FCB89F009DA6C6 /* Articolo.m in Sources */,
 				FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */,
+				FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

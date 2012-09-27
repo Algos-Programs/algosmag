@@ -10,6 +10,7 @@
 #import "MagMasterViewController.h"
 #import "MagDetailViewController.h"
 #import "Articolo.h"
+#import "LibArticolo.h"
 
 @interface MagMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -23,7 +24,6 @@ static BOOL vistaArticoliDbInCategory = NO;
 static BOOL debugMode = NO;
 
 static BOOL alfabeticOrder;
-static NSString * typeList;
 static BOOL mostraTotaleArticloli;
 
 static NSString * const NamePlist = @"articoli";
@@ -368,8 +368,7 @@ static NSString * const CellIdentifier = @"Cell";
     else {
         
         self.articoliAz = nil;
-    
-        self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
+        self.dicArticoli = [LibArticolo creaVistaCategoryWithArray:[self getAllArticoli]];
         self.articoli = dicArticoli;
         NSLog(@"dicArticoli = %@", self.dicArticoli.description);
         NSLog(@"articoli = %@", self.articoli.description);
@@ -423,27 +422,6 @@ static NSString * const CellIdentifier = @"Cell";
     
     [self.tableView reloadData];
 }
-
-- (void)case2Method {
-    if (debugMode) {
-        if (vistaArticoliDB) {
-            
-            [self inizializzaArticoloFromDB];
-        }
-        
-        [self inizializzaArticolo];
-        
-    }
-    else {
-        
-        [self initFromDB];
-    }
-    alfabeticOrder = TRUE;
-    vistaArticoli = YES;
-
-    
-}
-
 - (NSArray *)viewDB {
     
     NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM %@", TableName];
@@ -652,29 +630,6 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-#warning Da Eliminare
-- (void)inizializza {
-    
-    //Prendo il path della mia plist
-    NSString *path = [[NSBundle mainBundle] pathForResource:NamePlist ofType:@"plist"];
-    
-    //--- Prendo tutti gli articoli.
-    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:path]; 
-    self.articoli = dic;
-    
-    //--- Prendo tutte le CATEGORY
-    NSArray *array = [[self.articoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    self.categoryArticoli = array;
-}
-
-- (void)inizializzaCategoryArticoli {
-        
-        self.dicArticoli = [self creaVistaCategoryWithArray:[self getAllArticoli]];
-        self.articoli = dicArticoli;
-        self.categoryArticoli = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
-
-}
-
 - (UITableViewCell *)setCellWithDefaultImageWithCell :(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
     
     UIImage *image;
@@ -699,18 +654,6 @@ static NSString * const CellIdentifier = @"Cell";
 
 #pragma mark - Database Methods
 
-- (void) insertDefaultArticles {
-    
-    [self createTableNamed:@"Articoli" withCode:@"code" withName:@"name" withCateogry:@"category" withDescription:@"description" withPrice:@"price"];
-    
-    [self insertRecordIntoNamed:@"Articoli" codeValue:@"001" nameValue:@"Rossa" categoryValue:@"Vernici" descriptionValue:@"Vernice Rossa" priceValue:@"54€"];
-    [self insertRecordIntoNamed:@"Articoli" codeValue:@"002" nameValue:@"Verde" categoryValue:@"Vernici" descriptionValue:@"Vernice Verde" priceValue:@"90€"];
-    [self insertRecordIntoNamed:@"Articoli" codeValue:@"003" nameValue:@"Gialla" categoryValue:@"Vernici" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
-    [self insertRecordIntoNamed:@"Articoli" codeValue:@"004" nameValue:@"Gialla" categoryValue:@"Cacca" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
-    [self insertRecordIntoNamed:@"Articoli" codeValue:@"005" nameValue:@"Gialla" categoryValue:@"Puppu" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
-    
-}
-
 - (NSString *) filePath {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -729,17 +672,16 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-- (void)createTableNamed:(NSString *)tableName withField1:(NSString *)field1 withField2:(NSString *)field2 {
+- (void) insertDefaultArticles {
     
-    char *err;
-    NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' ('%@' "
-                     "TEXT PRIMARY KEY, '%@' TEXT);", tableName, field1, field2];
+    [self createTableNamed:@"Articoli" withCode:@"code" withName:@"name" withCateogry:@"category" withDescription:@"description" withPrice:@"price"];
     
-    if (sqlite3_exec(self.db, [sql UTF8String], NULL, NULL, &err) != SQLITE_OK) {
-        
-        sqlite3_close(self.db);
-        NSLog(@"Database falied create.");
-    }
+    [self insertRecordIntoNamed:@"Articoli" codeValue:@"001" nameValue:@"Rossa" categoryValue:@"Vernici" descriptionValue:@"Vernice Rossa" priceValue:@"54€"];
+    [self insertRecordIntoNamed:@"Articoli" codeValue:@"002" nameValue:@"Verde" categoryValue:@"Vernici" descriptionValue:@"Vernice Verde" priceValue:@"90€"];
+    [self insertRecordIntoNamed:@"Articoli" codeValue:@"003" nameValue:@"Gialla" categoryValue:@"Vernici" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
+    [self insertRecordIntoNamed:@"Articoli" codeValue:@"004" nameValue:@"Gialla" categoryValue:@"Cacca" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
+    [self insertRecordIntoNamed:@"Articoli" codeValue:@"005" nameValue:@"Gialla" categoryValue:@"Puppu" descriptionValue:@"Vernice Gialla" priceValue:@"110€"];
+    
 }
 
 - (void)createTableNamed:(NSString *)tableName withCode:(NSString *)code withName:(NSString *)name withCateogry:(NSString *)cateogry withDescription:(NSString *)descritpion withPrice:(NSString *)price;{
@@ -752,20 +694,6 @@ static NSString * const CellIdentifier = @"Cell";
         
         sqlite3_close(self.db);
         NSLog(@"Database falied create.");
-    }
-}
-
-- (void) insertRecordIntoNamed:(NSString *)tableName withField1:(NSString *)field1 field1Value:(NSString *)field1Value andField2:(NSString *)field2 field2Value:(NSString *)field2Value {
-    
-    NSString *sql = [NSString stringWithFormat:@"INSERT OR REPLACE INTO '%@' ('%@', '%@') "
-                     "VALUES ('%@','%@')", tableName, field1, field2, field1Value, field2Value];
-    
-    
-    char *err;
-    if (sqlite3_exec(self.db, [sql UTF8String], NULL, NULL, &err) != SQLITE_OK) {
-        
-        sqlite3_close(self.db);
-        NSLog(@"Error Updating table. '%s'", err);
     }
 }
 
@@ -783,116 +711,6 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-- (void) insertRecordInPippoWithfield1Value:(NSString *)field1Value field2Value:(NSString *)field2Value {
-    
-    [self insertRecordIntoNamed:@"pippo" withField1:@"code" field1Value:field1Value andField2:@"name" field2Value:field2Value];
-}
-
-- (void)insertArticoliInDbIntoNamed:(NSString *)tableName {
-    
-    [self createTableNamed:tableName withField1:@"code" withField2:@"name"];
-    
-    [self insertRecordInPippoWithfield1Value:@"001" field2Value:@"Red"];
-    [self insertRecordInPippoWithfield1Value:@"002" field2Value:@"Blue"];
-    [self insertRecordInPippoWithfield1Value:@"003" field2Value:@"Green"];
-
-    [self getObjectFromTableName:tableName];
-    
-    
-}
-
-- (void)PROVAinsertArticoliInDbIntoNamed:(NSString *)tableName favlue:(NSString *)ff {
-    
-    [self createTableNamed:tableName withField1:@"code" withField2:@"name"];
-    
-    [self insertRecordInPippoWithfield1Value:@"001" field2Value:@"Red"];
-    [self insertRecordInPippoWithfield1Value:@"002" field2Value:@"Blue"];
-    [self insertRecordInPippoWithfield1Value:@"003" field2Value:@"Green"];
-    [self insertRecordInPippoWithfield1Value:@"003" field2Value:ff];
-    [self getObjectFromTableName:tableName];
-
-
-}
-
-- (void)getObjectFromTableName:(NSString *)tableName {
-    
-    NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM %@", tableName];
-    sqlite3_stmt *statment;
-
-    if (sqlite3_prepare_v2(self.db, [qsql UTF8String], -1, &statment, nil) == SQLITE_OK) {
-        
-        while (sqlite3_step(statment) == SQLITE_ROW) {
-            
-            char *field1 = (char *) sqlite3_column_text(statment, 1);
-            NSString *field1Str = [[NSString alloc] initWithUTF8String:field1];
-            
-            NSString *str = [[NSString alloc] initWithFormat:@"%@", field1Str];
-            NSLog(@"%@", str);
-            
-        }
-        
-        //-- Delete the compiler statment from memory
-        sqlite3_finalize(statment);
-    }
-}
-
-- (void)getAllRowsFromTableNamed:(NSString *)tableName {
-    
-    NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM %@", tableName];
-    sqlite3_stmt *statment;
-    if (sqlite3_prepare_v2(self.db, [qsql UTF8String], -1, &statment, nil) == SQLITE_OK) {
-        
-        while (sqlite3_step(statment) == SQLITE_ROW) {
-            
-            char *field1 = (char *) sqlite3_column_text(statment, 0);
-            NSString *field1Str = [[NSString alloc] initWithUTF8String:field1];
-            
-            char *field2 = (char *) sqlite3_column_text(statment, 1);
-            NSString *field2Str = [[NSString alloc] initWithUTF8String:field2];
-            
-            NSString *str = [[NSString alloc] initWithFormat:@"%@ - %@", field1Str, field2Str];
-            NSLog(@"%@", str);
-            
-        }
-        
-        //-- Delete the compiler statment from memory
-        sqlite3_finalize(statment);
-    }
-}
-
-- (void)getAllRowsFromArticoli {
-    
-    NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM Articoli"];
-    sqlite3_stmt *statment;
-    if (sqlite3_prepare_v2(self.db, [qsql UTF8String], -1, &statment, nil) == SQLITE_OK) {
-        
-        while (sqlite3_step(statment) == SQLITE_ROW) {
-            
-            char *field1 = (char *) sqlite3_column_text(statment, 0);
-            NSString *field1Str = [[NSString alloc] initWithUTF8String:field1];
-            
-            char *field2 = (char *) sqlite3_column_text(statment, 1);
-            NSString *field2Str = [[NSString alloc] initWithUTF8String:field2];
-            
-            char *field3 = (char *) sqlite3_column_text(statment, 2);
-            NSString *field3Str = [[NSString alloc] initWithUTF8String:field3];
-
-            char *field4 = (char *) sqlite3_column_text(statment, 3);
-            NSString *field4Str = [[NSString alloc] initWithUTF8String:field4];
-
-            char *field5 = (char *) sqlite3_column_text(statment, 4);
-            NSString *field5Str = [[NSString alloc] initWithUTF8String:field5];
-
-            
-            NSString *str = [[NSString alloc] initWithFormat:@"%@ - %@ - %@ - %@ - %@", field1Str, field2Str, field3Str, field4Str, field5Str];
-            NSLog(@"%@", str);
-            
-        }
-        
-        //-- Delete the compiler statment from memory
-        sqlite3_finalize(statment);
-    }
-}
 
 - (NSArray *)getAllArticoli {
     
@@ -926,9 +744,6 @@ static NSString * const CellIdentifier = @"Cell";
             [art setDescription:field4Str];
             
             [tempArray addObject:(Articolo *)art];
-            NSString *str = [[NSString alloc] initWithFormat:@"%@ - %@ - %@ - %@ - %@", field1Str, field2Str, field3Str, field4Str, field5Str];
-            //NSLog(@"%@", str);
-            
         }
         //[self creaVistaCategoryWithArray:tempArray];
         
@@ -937,167 +752,4 @@ static NSString * const CellIdentifier = @"Cell";
     }
     return tempArray;
 }
-
-
-
-#pragma mark - Articolo Methos
-
-//-- Per vista Alfabetica
-- (void)inizializzaArticolo {
-    
-    Articolo *art = [[Articolo alloc] init];
-    [art setCode:@"Codice"];
-    [art setName:@"Nome"];
-     
-    NSArray *articoli = [[NSArray alloc] initWithObjects:art, nil];
-    self.articoliAz = articoli;
-
-}
-
-- (void)initFromDB {
-    
-    NSArray *array = [[NSArray alloc] init];
-    array = [self getAllArticoli];
-    self.articoliAz = array;
-    
-}
-
-- (void)inizializzaArticoloFromDB {
-    
-    Articolo *art = [[Articolo alloc] init];
-    
-    NSArray *array = [[NSArray alloc] init];
-    array = [self getAllArticoli];
-
-    art = [array objectAtIndex:0];
-    art = [array objectAtIndex:1];
-}
-
-#pragma mark - Temporaneamente Disabilitati
-
-//Temporanemente disabilitato - serve x cambiare il tipo di lista
-- (void)loadView2 {
-    
-    UITableView *tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame] style:UITableViewStyleGrouped];
-    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [tableView reloadData];
-    self.view = tableView;
-    //self.tableView = tableView;
-}
-
-- (void)ViewWillAppear:(BOOL)animated {
-    
-    [self loadSettings];
-    
-    if (alfabeticOrder) {
-        NSLog(@"+++ TRUE");
-    } else {
-        NSLog(@"--- FALSE");
-    }
-}
-
-- (void)insertNewObject:(id)sender {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    // [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    [newManagedObject setValue:[NSString string] forKey:@"stringa"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-}
-
-- (NSDictionary *)creaVistaCategoryWithArray:(NSArray *)array {
-    NSArray *categoryArray = [[NSArray alloc] init];
-    NSMutableDictionary *articoliDictionary = [[NSMutableDictionary alloc] init];
-    categoryArray = [self categoryFromArray:array];  
-    
-    for (int i = 0; i < categoryArray.count; i++) {
-        
-        NSString *categoryTemp = [[NSString alloc] init];
-        NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
-        categoryTemp = [categoryArray objectAtIndex:i];
-        
-        for (int y = 0; y < array.count; y++) {
-            
-            Articolo *art = [[Articolo alloc] init];
-            art = [array objectAtIndex:y];
-            
-            if ([categoryTemp isEqualToString:art.category]) {
-                
-                [arrayTemp addObject:art];
-            }//end if
-        }//end for
-        
-        [articoliDictionary setObject:arrayTemp forKey:categoryTemp];
-    }//end for
-    
-    return articoliDictionary;
-}
-
-- (BOOL)categoryAlreadyExistWithString:(NSString *)categoria withArray:(NSArray *)array {
-    
-    for (NSString *tempString in array) {
-        
-        if ([categoria isEqualToString:tempString]) {
-            return TRUE;
-        }
-    }
-    return FALSE;
-}
-
-- (NSArray *)categoryFromArray:(NSArray *)array {
-    
-    NSMutableArray *categoryArray = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < array.count; i++) {
-        
-        Articolo *art = [[Articolo alloc] init];
-        NSString *tempString = [[NSString alloc] init];
-        
-        art = [array objectAtIndex:i];
-        tempString = [art category];
-        
-        if (![self categoryAlreadyExistWithString:tempString withArray:categoryArray]) {
-            
-            [categoryArray addObject:tempString];
-        }
-    }
-    
-    return categoryArray;
-}
-
-- (NSArray *)categoryDuplicateFromArray:(NSArray *)array {
-    
-    NSMutableArray *categoryArray = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < array.count; i++) {
-        
-        Articolo *art = [[Articolo alloc] init];
-        NSString *tempString = [[NSString alloc] init];
-        
-        art = [array objectAtIndex:i];
-        tempString = [art category];
-
-        [categoryArray addObject:tempString];
-    }
-    
-    return categoryArray;
-}
-
-
-
-
-
 @end

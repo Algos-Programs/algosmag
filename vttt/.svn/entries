@@ -346,6 +346,13 @@ has-props
 
 26169
 
+LibArticolo.h
+file
+0
+
+
+add
+
 MagAppDelegate.m
 file
 
@@ -379,6 +386,13 @@ gac
 
 
 7688
+
+LibArticolo.m
+file
+0
+
+
+add
 
 articoli.plist
 file
@@ -414,13 +428,6 @@ gac
 
 408
 
-MagAddViewController.h
-file
-0
-
-
-add
-
 Articolo.h
 file
 
@@ -454,6 +461,13 @@ gac
 
 
 1026
+
+MagAddViewController.h
+file
+0
+
+
+add
 
 Magazzino-Prefix.pch
 file
