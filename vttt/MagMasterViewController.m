@@ -386,6 +386,8 @@ static NSString * const CellIdentifier = @"Cell";
             break;
 
         case 2:
+            
+            [self.tableView reloadData];
             /*
             alfabeticOrder = FALSE;
             vistaArticoliDbInCategory = FALSE;
