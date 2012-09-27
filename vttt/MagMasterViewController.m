@@ -40,8 +40,9 @@ static NSString * const CellIdentifier = @"Cell";
 @synthesize category;
 @synthesize db;
 
-- (void)awakeFromNib
-{
+
+#pragma mark- Life Cile
+- (void)awakeFromNib {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
@@ -49,8 +50,7 @@ static NSString * const CellIdentifier = @"Cell";
     [super awakeFromNib];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     //Apro DB
     [self openDB];
     
@@ -85,15 +85,13 @@ static NSString * const CellIdentifier = @"Cell";
 
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [self setTypeListButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
     } else {
@@ -103,8 +101,7 @@ static NSString * const CellIdentifier = @"Cell";
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (alfabeticOrder) {
         
         if (!vistaArticoli) {
@@ -120,8 +117,7 @@ static NSString * const CellIdentifier = @"Cell";
 
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (alfabeticOrder) {
         
         return [articoliAz count];
@@ -134,8 +130,8 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+#warning OTTIMIZZO QUESTO METODO
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (alfabeticOrder && vistaArticoli) {
@@ -172,10 +168,7 @@ static NSString * const CellIdentifier = @"Cell";
     return cell;
 }
 
-
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
@@ -190,20 +183,18 @@ static NSString * const CellIdentifier = @"Cell";
     }   
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // The table view should not be re-orderable.
     return NO;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+#warning OTTIMIZZARE QUESTO METODO
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         
         if (!self.detailViewController) {
@@ -269,6 +260,7 @@ static NSString * const CellIdentifier = @"Cell";
         //NSObject *obj= [NSString stringWithFormat:@"%@", [articoliAz objectAtIndex:indexPath.section]];
     }
 }
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
     if (alfabeticOrder) {
@@ -290,7 +282,6 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-
 //--display the footer--
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
     
@@ -303,30 +294,19 @@ static NSString * const CellIdentifier = @"Cell";
     }
 }
 
-//--display della singola cella--
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    //if (indexPath.row == 0 || indexPath.row%2 == 0) {
-    
-    //UIColor *altCellColor = [UIColor colorWithWhite:0.3 alpha:0.2];
-    //cell.backgroundColor = altCellColor;
-    //}
-}
-
 //--indenting each row--
 //--non funziona--
-- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [indexPath row] % 2;
 }
 
-
 //--heiht of each row--
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 40;
     //return 40 + 30 * ([indexPath row] % 2);
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
@@ -385,7 +365,7 @@ static NSString * const CellIdentifier = @"Cell";
 
 }
 
-- (void)chageViewOrderWithPosition:(int)posizione{
+- (void)chageViewOrderWithPosition:(int)posizione{ 
     
     switch (posizione)  {
         case 0:
