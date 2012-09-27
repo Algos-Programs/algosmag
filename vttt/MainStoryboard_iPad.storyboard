@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="859" y="-631"/>
         </scene>
-        <!--View Controller - Aggiungi-->
+        <!--Mag Aggiungi Articolo View Controller - Aggiungi-->
         <scene sceneID="E8J-ss-D4n">
             <objects>
-                <viewController id="boh-g9-8QB" sceneMemberID="viewController">
+                <viewController id="boh-g9-8QB" customClass="MagAggiungiArticoloViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBi-fs-9dU">
                         <rect key="frame" x="0.0" y="64" width="320" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -232,7 +232,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Codice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2b7-gG-23w">
-                                <rect key="frame" x="31" y="167" width="53" height="21"/>
+                                <rect key="frame" x="31" y="167" width="96" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -297,7 +297,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tC8-dF-RHj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Romania.png" id="tC8-dF-RHj">
                                 <rect key="frame" x="40" y="525" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -313,6 +313,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="categoryButtonPressed:" destination="boh-g9-8QB" eventType="touchUpInside" id="KVX-Kf-Mk7"/>
                                     <segue destination="Kfp-m2-scT" kind="push" id="xfc-QH-IRn"/>
                                 </connections>
                             </button>
@@ -321,8 +322,19 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Aggiungi" id="Vt3-A1-ssP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="P5p-DW-coh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="P5p-DW-coh">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="boh-g9-8QB" id="loK-9e-PYI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="codeTextField" destination="QBA-8E-8a3" id="jYn-a7-k1c"/>
+                        <outlet property="descriptionTextField" destination="LJr-bY-alC" id="Bjl-tx-0ej"/>
+                        <outlet property="iconImageView" destination="tC8-dF-RHj" id="ftm-hT-iWI"/>
+                        <outlet property="nameTextField" destination="OhX-5u-8VF" id="dbm-dO-oxU"/>
+                        <outlet property="priceTextField" destination="na0-tY-Ylj" id="zaU-yH-QYy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqu-bZ-HLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -360,7 +372,23 @@
             <point key="canvasLocation" x="-366" y="248"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Romania.png" width="256" height="256"/>
+    </resources>
     <classes>
+        <class className="MagAggiungiArticoloViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MagAggiungiArticoloViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="categoryButtonPressed:"/>
+                <relationship kind="action" name="imageViewPressed:"/>
+                <relationship kind="action" name="saveButtonPressed:"/>
+                <relationship kind="outlet" name="codeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="descriptionTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="iconImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priceTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="MagDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MagDetailViewController.h"/>
             <relationships>

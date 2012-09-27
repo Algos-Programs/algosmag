@@ -394,6 +394,13 @@ file
 
 add
 
+temp.plist
+file
+0
+
+
+add
+
 articoli.plist
 file
 
@@ -428,6 +435,20 @@ gac
 
 408
 
+MagAggiungiArticoloViewController.h
+file
+0
+
+
+add
+
+MagAddViewController.h
+file
+0
+
+
+add
+
 Articolo.h
 file
 
@@ -461,13 +482,6 @@ gac
 
 
 1026
-
-MagAddViewController.h
-file
-0
-
-
-add
 
 Magazzino-Prefix.pch
 file
@@ -510,6 +524,27 @@ file
 
 add
 
+MagAggiungiArticoloViewController.m
+file
+0
+
+
+add
+
+prova.jpg
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
 Brazil.png
 file
 
@@ -543,54 +578,6 @@ has-props
 
 
 47060
-
-prova.jpg
-file
-0
-
-
-add
-
-
-
-
-
-has-props
-has-prop-mods
-
-Articolo.m
-file
-
-
-
-replace
-2012-09-05T17:39:00.000000Z
-
-2012-09-05T07:36:43.372968Z
-24
-gac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1700
 
 Belgium.png
 file
@@ -626,7 +613,48 @@ has-props
 
 28228
 
+Articolo.m
+file
+
+
+
+replace
+2012-09-05T17:39:00.000000Z
+
+2012-09-05T07:36:43.372968Z
+24
+gac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1700
+
 LibPlist.h
+file
+0
+
+
+add
+
+MagAggiungiViewController.m
 file
 0
 
@@ -666,13 +694,6 @@ has-props
 
 
 31282
-
-MagAggiungiViewController.m
-file
-0
-
-
-add
 
 MagDetailViewController.h
 file

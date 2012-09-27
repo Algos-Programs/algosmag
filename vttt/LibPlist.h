@@ -14,5 +14,7 @@
 - (NSArray *)articoliFromDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *)dictionaryWithString:(NSString *)name;
 - (NSDictionary *)getDictionaryArticoli;
++ (void)writeDictionary:(NSDictionary *)dictionary fromPlistName:(NSString *)plistName;
++ (NSDictionary *)readPlistName:(NSString *)plistName;
 
 @end

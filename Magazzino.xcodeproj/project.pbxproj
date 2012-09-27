@@ -38,6 +38,8 @@
 		FF50AEA115FE5228009DA6C6 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AEA015FE5228009DA6C6 /* icon_57x57.png */; };
 		FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698B1614F1F700FEC2FA /* LibPlist.m */; };
 		FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */; };
+		FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */; };
+		FF8B6999161505C100FEC2FA /* temp.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF8B6998161505C000FEC2FA /* temp.plist */; };
 		FFD373A915F90A1C00B67937 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD373A815F90A1C00B67937 /* libsqlite3.dylib */; };
 		FFF7625F15F8E67500D6048C /* LibDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF7625E15F8E67500D6048C /* LibDatabase.m */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,9 @@
 		FF8B698B1614F1F700FEC2FA /* LibPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibPlist.m; sourceTree = "<group>"; };
 		FF8B698E1614F5EB00FEC2FA /* LibArticolo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibArticolo.h; sourceTree = "<group>"; };
 		FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibArticolo.m; sourceTree = "<group>"; };
+		FF8B69911614FDC900FEC2FA /* MagAggiungiArticoloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagAggiungiArticoloViewController.h; sourceTree = "<group>"; };
+		FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagAggiungiArticoloViewController.m; sourceTree = "<group>"; };
+		FF8B6998161505C000FEC2FA /* temp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = temp.plist; sourceTree = "<group>"; };
 		FFD373A815F90A1C00B67937 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FFF7625D15F8E67500D6048C /* LibDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibDatabase.h; sourceTree = "<group>"; };
 		FFF7625E15F8E67500D6048C /* LibDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibDatabase.m; sourceTree = "<group>"; };
@@ -141,6 +146,8 @@
 				B4095F3515E777CC0088EEF3 /* MagMasterViewController.m */,
 				B4095F3715E777CC0088EEF3 /* MagDetailViewController.h */,
 				B4095F3815E777CC0088EEF3 /* MagDetailViewController.m */,
+				FF8B69911614FDC900FEC2FA /* MagAggiungiArticoloViewController.h */,
+				FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 		B4095F2015E777CC0088EEF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF8B6998161505C000FEC2FA /* temp.plist */,
 				B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */,
 				B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */,
 				FF3964371611FCC3002DC3A1 /* Image */,
@@ -341,6 +349,7 @@
 				FF50AE9D15FE4828009DA6C6 /* background.jpg in Resources */,
 				FF50AE9F15FE51AD009DA6C6 /* icon.png in Resources */,
 				FF50AEA115FE5228009DA6C6 /* icon_57x57.png in Resources */,
+				FF8B6999161505C100FEC2FA /* temp.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +393,7 @@
 				FF50AE9115FCB89F009DA6C6 /* Articolo.m in Sources */,
 				FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */,
 				FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */,
+				FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

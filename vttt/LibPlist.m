@@ -66,4 +66,18 @@
     
 }
 
++ (void)writeDictionary:(NSDictionary *)dictionary fromPlistName:(NSString *)plistName {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
+    [dictionary writeToFile:path atomically:YES];
+}
+
++ (NSDictionary *)readPlistName:(NSString *)plistName {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
+    NSMutableDictionary *savedStock = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    
+    return savedStock;
+}
+
 @end
