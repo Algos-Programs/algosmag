@@ -612,6 +612,13 @@ has-props
 
 28228
 
+LibPlist.h
+file
+0
+
+
+add
+
 Romania.png
 file
 
@@ -686,6 +693,13 @@ gac
 
 
 373
+
+LibPlist.m
+file
+0
+
+
+add
 
 MagDetailViewController.m
 file
@@ -795,6 +809,20 @@ has-props
 
 657
 
+background.jpg
+file
+0
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
 ListaArticoli.m
 file
 
@@ -828,20 +856,6 @@ has-props
 
 
 2475
-
-background.jpg
-file
-0
-
-
-add
-
-
-
-
-
-has-props
-has-prop-mods
 
 MagMasterViewController.h
 file
