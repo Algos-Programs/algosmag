@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370472704.831617"
+         timestampString = "370473106.113244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "430"
-         endingLineNumber = "430"
+         startingLineNumber = "427"
+         endingLineNumber = "427"
          landmarkName = "-viewDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370472704.831617"
+         timestampString = "370473106.113244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "451"
-         endingLineNumber = "451"
+         startingLineNumber = "448"
+         endingLineNumber = "448"
          landmarkName = "-viewDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370472704.831617"
+         timestampString = "370473106.113244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "393"
-         endingLineNumber = "393"
+         startingLineNumber = "390"
+         endingLineNumber = "390"
          landmarkName = "-chageViewOrderWithPosition:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370472704.831617"
+         timestampString = "370473106.113244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "392"
-         endingLineNumber = "392"
+         startingLineNumber = "389"
+         endingLineNumber = "389"
          landmarkName = "-chageViewOrderWithPosition:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370472704.831617"
+         timestampString = "370473106.113244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "592"
-         endingLineNumber = "592"
+         startingLineNumber = "464"
+         endingLineNumber = "464"
          landmarkName = "-loadSettings"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370472704.831617"
+         timestampString = "370473106.113244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "607"
-         endingLineNumber = "607"
+         startingLineNumber = "479"
+         endingLineNumber = "479"
          landmarkName = "-setSegmentedControl"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370472704.831617"
+         timestampString = "370473106.113244"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "718"
-         endingLineNumber = "718"
+         startingLineNumber = "590"
+         endingLineNumber = "590"
          landmarkName = "-getAllArticoli"
          landmarkType = "5">
       </FileBreakpoint>
