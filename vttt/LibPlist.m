@@ -57,9 +57,9 @@
     return dictionary;
 }
 
-- (NSDictionary *)getDictionaryArticoli {
+- (NSDictionary *)getDictionaryArticoliFromPlistName:(NSString *)plistName {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"articoli" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
     NSDictionary *dictionary = [[NSDictionary alloc] initWithContentsOfFile:path];
     
     return dictionary;

@@ -9,8 +9,11 @@
 
 #import "MagMasterViewController.h"
 #import "MagDetailViewController.h"
+
 #import "Articolo.h"
+
 #import "LibArticolo.h"
+#import "LibPlist.h"
 
 @interface MagMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -29,6 +32,10 @@ static BOOL mostraTotaleArticloli;
 static NSString * const NamePlist = @"articoli";
 static NSString * const TableName = @"Articoli";
 static NSString * const CellIdentifier = @"Cell";
+
+NSString * const NAME_FIRST_BUTTON = @"Az";
+NSString * const NAMe_SECOND_BUTTON = @"Category";
+NSString * const NAME_THIRD_BUTTON = @"Aggiorna";
 
 
 @implementation MagMasterViewController
@@ -388,12 +395,7 @@ static NSString * const CellIdentifier = @"Cell";
         case 2:
             
             [self.tableView reloadData];
-            /*
-            alfabeticOrder = FALSE;
-            vistaArticoliDbInCategory = FALSE;
-            vistaArticoli = NO;
-            [self regolaVista:alfabeticOrder];
-             */
+            [self inserisciNuovoArticoloNelDb];
             break;
             
             
@@ -404,6 +406,17 @@ static NSString * const CellIdentifier = @"Cell";
     
     [self.tableView reloadData];
 }
+
+
+#warning Cambiare nome
+- (void) inserisciNuovoArticoloNelDb {
+    
+#warning Prendere nome plist dalla classe principale
+    NSDictionary *dic = [LibPlist readPlistName:@"temp"];
+    [self insertRecordIntoNamed:TableName codeValue:[dic objectForKey:@"code"] nameValue:[dic objectForKey:@"name"] categoryValue:[dic objectForKey:@"category"] descriptionValue:[dic objectForKey:@"description"] priceValue:[dic objectForKey:@"price"]];
+    int c = 321;
+}
+
 - (NSArray *)viewDB {
     
     NSString * qsql = [NSString stringWithFormat:@"SELECT * FROM %@", TableName];
@@ -464,9 +477,9 @@ static NSString * const CellIdentifier = @"Cell";
     [self.changeTypeListButton setEnabled:YES forSegmentAtIndex:2];
 
     //--- Inserisco i titoli su tutti i bottini del Segmented Control
-    [self.changeTypeListButton setTitle:@"Az" forSegmentAtIndex:0];
-    [self.changeTypeListButton setTitle:@"Category" forSegmentAtIndex:1];
-    [self.changeTypeListButton setTitle:@"Articoli" forSegmentAtIndex:2];
+    [self.changeTypeListButton setTitle:NAME_FIRST_BUTTON forSegmentAtIndex:0];
+    [self.changeTypeListButton setTitle:NAMe_SECOND_BUTTON forSegmentAtIndex:1];
+    [self.changeTypeListButton setTitle:NAME_THIRD_BUTTON forSegmentAtIndex:2];
     
     //--- Dico quale section selezione in base alla fista di default
     switch (alfabeticOrder) {
