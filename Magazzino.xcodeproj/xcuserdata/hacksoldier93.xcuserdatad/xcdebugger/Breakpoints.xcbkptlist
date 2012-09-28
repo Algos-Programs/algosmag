@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370558759.434957"
+         timestampString = "370560830.86835"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "580"
-         endingLineNumber = "580"
+         startingLineNumber = "574"
+         endingLineNumber = "574"
          landmarkName = "-insertRecordIntoNamed:codeValue:nameValue:categoryValue:descriptionValue:priceValue:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -53,6 +53,71 @@
          startingLineNumber = "181"
          endingLineNumber = "181"
          landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagDetailViewController.m"
+         timestampString = "370559832.766526"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-setDetailItem:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagDetailViewController.m"
+         timestampString = "370559836.395802"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
+         landmarkName = "-configureView"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagMasterViewController.m"
+         timestampString = "370559888.247037"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "206"
+         endingLineNumber = "206"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagMasterViewController.m"
+         timestampString = "370559987.911742"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
+         landmarkName = "-awakeFromNib"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "vttt/MagMasterViewController.m"
+         timestampString = "370560099.62828"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "319"
+         endingLineNumber = "319"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

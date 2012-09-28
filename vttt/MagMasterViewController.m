@@ -314,11 +314,14 @@ NSString * const NAME_THIRD_BUTTON = @"Aggiorna";
     //return 40 + 30 * ([indexPath row] % 2);
 }
 
+#warning QUI X PASSARE AL DETAIL
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        NSString *categoryName = [self.categoryArticoli objectAtIndex:indexPath.section];
+        Articolo *art = [self.articoli objectForKey:categoryName];
+
+        [[segue destinationViewController] setDetailItem:art];
     }
 }
 
@@ -439,12 +442,6 @@ NSString * const NAME_THIRD_BUTTON = @"Aggiorna";
     
     
     return array;
-}
-
-
-- (IBAction)pressTypeListButton:(id)sender {
-    
-    [self toggleTypeListButton];
 }
 
 #pragma mark - Settings Mehods
