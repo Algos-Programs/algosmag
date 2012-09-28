@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "sqlite3.h"
 
 @interface LibDatabase : NSObject
-//546
+
 @end

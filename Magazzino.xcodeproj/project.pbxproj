@@ -36,6 +36,10 @@
 		FF50AE9D15FE4828009DA6C6 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF50AE9C15FE4827009DA6C6 /* background.jpg */; };
 		FF50AE9F15FE51AD009DA6C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AE9E15FE51AC009DA6C6 /* icon.png */; };
 		FF50AEA115FE5228009DA6C6 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AEA015FE5228009DA6C6 /* icon_57x57.png */; };
+		FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698B1614F1F700FEC2FA /* LibPlist.m */; };
+		FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */; };
+		FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */; };
+		FF8B6999161505C100FEC2FA /* temp.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF8B6998161505C000FEC2FA /* temp.plist */; };
 		FFD373A915F90A1C00B67937 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD373A815F90A1C00B67937 /* libsqlite3.dylib */; };
 		FFF7625F15F8E67500D6048C /* LibDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF7625E15F8E67500D6048C /* LibDatabase.m */; };
 /* End PBXBuildFile section */
@@ -87,6 +91,13 @@
 		FF50AE9C15FE4827009DA6C6 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		FF50AE9E15FE51AC009DA6C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		FF50AEA015FE5228009DA6C6 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_57x57.png; path = ../icon_57x57.png; sourceTree = "<group>"; };
+		FF8B698A1614F1F700FEC2FA /* LibPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibPlist.h; sourceTree = "<group>"; };
+		FF8B698B1614F1F700FEC2FA /* LibPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibPlist.m; sourceTree = "<group>"; };
+		FF8B698E1614F5EB00FEC2FA /* LibArticolo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibArticolo.h; sourceTree = "<group>"; };
+		FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibArticolo.m; sourceTree = "<group>"; };
+		FF8B69911614FDC900FEC2FA /* MagAggiungiArticoloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagAggiungiArticoloViewController.h; sourceTree = "<group>"; };
+		FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagAggiungiArticoloViewController.m; sourceTree = "<group>"; };
+		FF8B6998161505C000FEC2FA /* temp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = temp.plist; sourceTree = "<group>"; };
 		FFD373A815F90A1C00B67937 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FFF7625D15F8E67500D6048C /* LibDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibDatabase.h; sourceTree = "<group>"; };
 		FFF7625E15F8E67500D6048C /* LibDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibDatabase.m; sourceTree = "<group>"; };
@@ -135,6 +146,8 @@
 				B4095F3515E777CC0088EEF3 /* MagMasterViewController.m */,
 				B4095F3715E777CC0088EEF3 /* MagDetailViewController.h */,
 				B4095F3815E777CC0088EEF3 /* MagDetailViewController.m */,
+				FF8B69911614FDC900FEC2FA /* MagAggiungiArticoloViewController.h */,
+				FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -142,7 +155,7 @@
 		B4095F0815E777CC0088EEF3 = {
 			isa = PBXGroup;
 			children = (
-				B4095F1F15E777CC0088EEF3 /* vttt */,
+				B4095F1F15E777CC0088EEF3 /* Magazzino */,
 				B4095F4715E777CC0088EEF3 /* vtttTests */,
 				B4095F1415E777CC0088EEF3 /* Products */,
 			);
@@ -170,23 +183,25 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		B4095F1F15E777CC0088EEF3 /* vttt */ = {
+		B4095F1F15E777CC0088EEF3 /* Magazzino */ = {
 			isa = PBXGroup;
 			children = (
+				B4095F2815E777CC0088EEF3 /* MagAppDelegate.h */,
+				B4095F2915E777CC0088EEF3 /* MagAppDelegate.m */,
 				FFF7625B15F8E65500D6048C /* Lib */,
 				0EC84F2F15EA657E00273B38 /* Controller */,
 				0EC84F2D15EA657300273B38 /* Model */,
-				B4095F2815E777CC0088EEF3 /* MagAppDelegate.h */,
-				B4095F2915E777CC0088EEF3 /* MagAppDelegate.m */,
 				B4095F3115E777CC0088EEF3 /* vttt.xcdatamodeld */,
 				B4095F2015E777CC0088EEF3 /* Supporting Files */,
 			);
+			name = Magazzino;
 			path = vttt;
 			sourceTree = "<group>";
 		};
 		B4095F2015E777CC0088EEF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF8B6998161505C000FEC2FA /* temp.plist */,
 				B422E29615F735EB00F76972 /* MainStoryboard_iPhone.storyboard */,
 				B422E29715F735EB00F76972 /* MainStoryboard_iPad.storyboard */,
 				FF3964371611FCC3002DC3A1 /* Image */,
@@ -241,6 +256,10 @@
 			children = (
 				FFF7625D15F8E67500D6048C /* LibDatabase.h */,
 				FFF7625E15F8E67500D6048C /* LibDatabase.m */,
+				FF8B698A1614F1F700FEC2FA /* LibPlist.h */,
+				FF8B698B1614F1F700FEC2FA /* LibPlist.m */,
+				FF8B698E1614F5EB00FEC2FA /* LibArticolo.h */,
+				FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -330,6 +349,7 @@
 				FF50AE9D15FE4828009DA6C6 /* background.jpg in Resources */,
 				FF50AE9F15FE51AD009DA6C6 /* icon.png in Resources */,
 				FF50AEA115FE5228009DA6C6 /* icon_57x57.png in Resources */,
+				FF8B6999161505C100FEC2FA /* temp.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +391,9 @@
 				B4095F3915E777CC0088EEF3 /* MagDetailViewController.m in Sources */,
 				FFF7625F15F8E67500D6048C /* LibDatabase.m in Sources */,
 				FF50AE9115FCB89F009DA6C6 /* Articolo.m in Sources */,
+				FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */,
+				FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */,
+				FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

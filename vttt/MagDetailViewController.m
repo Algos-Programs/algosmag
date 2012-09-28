@@ -45,6 +45,11 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    int c = 3;
+}
+
 - (void)viewDidLoad
 {
     // Titolo della colonna di destra
