@@ -9,6 +9,7 @@
 
 #import "MagMasterViewController.h"
 #import "MagDetailViewController.h"
+#import "MagAggiungiArticoloViewController.h"
 
 #import "Articolo.h"
 
@@ -407,14 +408,11 @@ NSString * const NAME_THIRD_BUTTON = @"Aggiorna";
     [self.tableView reloadData];
 }
 
-
-#warning Cambiare nome
 - (void) inserisciNuovoArticoloNelDb {
     
-#warning Prendere nome plist dalla classe principale
-    NSDictionary *dic = [LibPlist readPlistName:@"temp"];
-    [self insertRecordIntoNamed:TableName codeValue:[dic objectForKey:@"code"] nameValue:[dic objectForKey:@"name"] categoryValue:[dic objectForKey:@"category"] descriptionValue:[dic objectForKey:@"description"] priceValue:[dic objectForKey:@"price"]];
-    int c = 321;
+    NSDictionary *dic = [LibPlist readPlistName:[MagAggiungiArticoloViewController plistName]];
+    
+    [self insertRecordIntoNamed:TableName codeValue:[dic objectForKey:[MagAggiungiArticoloViewController keyCode]] nameValue:[dic objectForKey:[MagAggiungiArticoloViewController keyName]] categoryValue:[dic objectForKey:[MagAggiungiArticoloViewController keyCategory]] descriptionValue:[dic objectForKey:[MagAggiungiArticoloViewController keyDescription]] priceValue:[dic objectForKey:[MagAggiungiArticoloViewController keyPrice]]];
 }
 
 - (NSArray *)viewDB {

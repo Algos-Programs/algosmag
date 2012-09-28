@@ -77,4 +77,37 @@ static NSString * const PLIST_NAME = @"temp";
     return dictionary;
 }
 
+#pragma mark - Metodi Statici Di Ritorno KEY
+
++ (NSString *)keyCode {
+    
+    return KEY_CODE;
+}
+
++ (NSString *)keyName {
+    
+    return KEY_NAME;
+}
+
++ (NSString *)keyPrice {
+    
+    return KEY_PRICE;
+}
+
++ (NSString *)keyDescription {
+    
+    return KEY_DESCRIPTION;
+}
+
++ (NSString *)keyCategory {
+    
+    return KEY_CATEGORY;
+}
+
++ (NSString *)plistName {
+    
+    return PLIST_NAME;
+}
+
+
 @end

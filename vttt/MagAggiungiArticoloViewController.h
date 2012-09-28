@@ -19,4 +19,13 @@
 
 - (IBAction)categoryButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
+
++ (NSString *)keyCode;
++ (NSString *)keyName;
++ (NSString *)keyPrice;
++ (NSString *)keyDescription;
++ (NSString *)keyCategory;
++ (NSString *)plistName;
+
+
 @end
