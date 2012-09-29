@@ -7,6 +7,7 @@
 //
 
 #import "MagDetailViewController.h"
+#import "Articolo.h"
 
 @interface MagDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -41,7 +42,15 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        
+//        _codeTextField.text = art.code;
+//        _nameTextField.text = art.name;
+//        _categoryTextField.text = art.category;
+//        _priceTextField.text = @"0.00€";
+//        _descritpionTextField.text = art.description;
+        
+        
+        //self.detailDescriptionLabel.text = [self.detailItem description];
     }
 }
 
