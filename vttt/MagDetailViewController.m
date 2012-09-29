@@ -48,7 +48,10 @@
         _codeTextField.text = self.articolo.code;
         _nameTextField.text = self.articolo.name;
         _categoryTextField.text = self.articolo.category;
-        _priceTextField.text = @"0.00€";
+        if (self.articolo.price == nil)
+            _priceTextField.text = @"0.00€";
+        else
+            _priceTextField.text = self.articolo.price;
         _descritpionTextField.text = self.articolo.description;
         
         

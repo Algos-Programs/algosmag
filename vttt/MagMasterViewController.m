@@ -363,12 +363,8 @@ NSString * const NAME_THIRD_BUTTON = @"Aggiorna";
         self.articoliAz = nil;
         self.dicArticoli = [LibArticolo creaVistaCategoryWithArray:[self getAllArticoli]];
         self.articoli = dicArticoli;
-        NSLog(@"dicArticoli = %@", self.dicArticoli.description);
-        NSLog(@"articoli = %@", self.articoli.description);
 
         self.categoryArticoli = [[self.dicArticoli allKeys] sortedArrayUsingSelector:@selector(compare:)];
-        NSLog(@"categoryArticoli = %@", self.categoryArticoli.description);
-
     }
 }
 
@@ -453,9 +449,7 @@ NSString * const NAME_THIRD_BUTTON = @"Aggiorna";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     alfabeticOrder = [self convertIntegerToBoolean:[defaults objectForKey:@"alfabeticOrder"]];
-    NSLog(@"AlfabeticOrder = %d", (int)alfabeticOrder);
     mostraTotaleArticloli = [self convertIntegerToBoolean:[defaults objectForKey:@"mostraTotaleArticoli"]];
-    NSLog(@"MostraTotaleArticoli = %d", (int)mostraTotaleArticloli);
 
 }
 

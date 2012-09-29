@@ -41,6 +41,7 @@
 		FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */; };
 		FF8B6999161505C100FEC2FA /* temp.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF8B6998161505C000FEC2FA /* temp.plist */; };
 		FFD373A915F90A1C00B67937 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD373A815F90A1C00B67937 /* libsqlite3.dylib */; };
+		FFF06C8816172979005C03D0 /* MagCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF06C8716172979005C03D0 /* MagCategoryViewController.m */; };
 		FFF7625F15F8E67500D6048C /* LibDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF7625E15F8E67500D6048C /* LibDatabase.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,8 @@
 		FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagAggiungiArticoloViewController.m; sourceTree = "<group>"; };
 		FF8B6998161505C000FEC2FA /* temp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = temp.plist; sourceTree = "<group>"; };
 		FFD373A815F90A1C00B67937 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FFF06C8616172979005C03D0 /* MagCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagCategoryViewController.h; sourceTree = "<group>"; };
+		FFF06C8716172979005C03D0 /* MagCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagCategoryViewController.m; sourceTree = "<group>"; };
 		FFF7625D15F8E67500D6048C /* LibDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibDatabase.h; sourceTree = "<group>"; };
 		FFF7625E15F8E67500D6048C /* LibDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibDatabase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +151,8 @@
 				B4095F3815E777CC0088EEF3 /* MagDetailViewController.m */,
 				FF8B69911614FDC900FEC2FA /* MagAggiungiArticoloViewController.h */,
 				FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */,
+				FFF06C8616172979005C03D0 /* MagCategoryViewController.h */,
+				FFF06C8716172979005C03D0 /* MagCategoryViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */,
 				FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */,
 				FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */,
+				FFF06C8816172979005C03D0 /* MagCategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,13 +15,13 @@
     NSString *name;
     NSString *category;
     NSString *description;
-    float *price;
+    NSString *price;
 }
 
 @property (nonatomic, strong) NSString *code;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) NSString *description;
-@property (nonatomic, assign) float *price;
+@property (nonatomic, assign) NSString *price;
 
 @end

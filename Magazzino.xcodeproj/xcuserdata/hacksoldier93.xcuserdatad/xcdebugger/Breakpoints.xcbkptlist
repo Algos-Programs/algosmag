@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagMasterViewController.m"
-         timestampString = "370615734.237863"
+         timestampString = "370616094.550481"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "576"
-         endingLineNumber = "576"
+         startingLineNumber = "570"
+         endingLineNumber = "570"
          landmarkName = "-insertRecordIntoNamed:codeValue:nameValue:categoryValue:descriptionValue:priceValue:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "vttt/MagDetailViewController.m"
-         timestampString = "370615793.972102"
+         timestampString = "370616209.754028"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
          landmarkName = "@implementation MagDetailViewController"
          landmarkType = "3">
       </FileBreakpoint>
