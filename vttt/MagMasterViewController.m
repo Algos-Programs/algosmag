@@ -319,8 +319,10 @@ NSString * const NAME_THIRD_BUTTON = @"Aggiorna";
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSString *categoryName = [self.categoryArticoli objectAtIndex:indexPath.section];
-        Articolo *art = [self.articoli objectForKey:categoryName];
+        NSArray *arrayArt = [self.articoli objectForKey:categoryName];
+        Articolo *art = [arrayArt objectAtIndex:[indexPath row]];
 
+        
         [[segue destinationViewController] setDetailItem:art];
     }
 }

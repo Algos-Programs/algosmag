@@ -23,8 +23,11 @@
 @synthesize priceTextField = _priceTextField;
 @synthesize descritpionTextField = _descritpionTextField;
 
+@synthesize articolo = _articolo;
+
 - (void)setDetailItem:(id)newDetailItem
 {
+    _articolo = newDetailItem;
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
         
@@ -41,13 +44,12 @@
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        
-//        _codeTextField.text = art.code;
-//        _nameTextField.text = art.name;
-//        _categoryTextField.text = art.category;
-//        _priceTextField.text = @"0.00€";
-//        _descritpionTextField.text = art.description;
+    if (self.detailItem) {        
+        _codeTextField.text = self.articolo.code;
+        _nameTextField.text = self.articolo.name;
+        _categoryTextField.text = self.articolo.category;
+        _priceTextField.text = @"0.00€";
+        _descritpionTextField.text = self.articolo.description;
         
         
         //self.detailDescriptionLabel.text = [self.detailItem description];

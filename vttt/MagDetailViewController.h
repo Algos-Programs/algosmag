@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Articolo.h"
 
 @interface MagDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
@@ -20,4 +21,5 @@
 @property (strong, nonatomic) IBOutlet UITextField *priceTextField;
 @property (strong, nonatomic) IBOutlet UITextField *descritpionTextField;
 
+@property (strong, nonatomic) Articolo *articolo;
 @end
