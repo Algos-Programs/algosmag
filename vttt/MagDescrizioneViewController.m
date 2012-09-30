@@ -7,7 +7,7 @@
 //
 
 #import "MagDescrizioneViewController.h"
-#import "MagMasterViewController.h"
+#import "MagDetailViewController.h"
 
 @interface MagDescrizioneViewController ()
 
@@ -28,7 +28,8 @@
 - (void)viewDidLoad
 {
     
-    _descrizioneTextField.text = [MagMasterViewController description];
+    _descrizioneTextField.text = [MagDetailViewController descrizione];
+    NSLog(@"Descrizione = %@", [MagDetailViewController descrizione]);
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

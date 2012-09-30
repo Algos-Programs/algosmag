@@ -26,17 +26,17 @@
 
 @synthesize articolo = _articolo;
 
-static NSString * description = @"";
+static NSString * descrizione = @"";
 
 
-+ (NSString *)descritpion {
++ (NSString *)descrizione {
     
-    return description;
+    return descrizione;
 }
 
-+ (void)setDescription:(NSString *)str {
++ (void)setDescrizione:(NSString *)str {
     
-    description = [[NSString alloc] initWithString:str];
+    descrizione = [[NSString alloc] initWithString:str];
 }
 
 - (void)setDetailItem:(id)newDetailItem
@@ -68,7 +68,7 @@ static NSString * description = @"";
             _priceTextField.text = self.articolo.price;
         _descritpionTextField.text = self.articolo.description;
         
-        description = self.articolo.description;
+        descrizione = self.articolo.description;
         [self.buttonDescription setTitle:self.articolo.description forState:nil];
     }
 }

@@ -24,7 +24,7 @@
 
 @property (strong, nonatomic) Articolo *articolo;
 
-+ (NSString *)descritpion;
-+ (void)setDescription:(NSString *)str;
++ (NSString *)descrizione;
++ (void)setDescrizione:(NSString *)str;
 
 @end
