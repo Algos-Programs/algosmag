@@ -29,7 +29,8 @@
 {
     
     _descrizioneTextField.text = [MagDetailViewController descrizione];
-    NSLog(@"Descrizione = %@", [MagDetailViewController descrizione]);
+#warning SOLO IN MODALITà VIEW E NON EDIT
+    [_descrizioneTextField setEnabled:NO];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

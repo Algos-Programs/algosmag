@@ -16,6 +16,8 @@
 
 @implementation MagDetailViewController
 
+static BOOL conBottene = YES;
+
 #pragma mark - Managing the detail item
 @synthesize codeTextField = _codeTextField;
 @synthesize nameTextField = _nameTextField;
@@ -58,7 +60,10 @@ static NSString * descrizione = @"";
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {        
+    if (self.detailItem) {
+        
+        [self disabilitaTextEdit];
+        
         _codeTextField.text = self.articolo.code;
         _nameTextField.text = self.articolo.name;
         _categoryTextField.text = self.articolo.category;
@@ -66,11 +71,27 @@ static NSString * descrizione = @"";
             _priceTextField.text = @"0.00€";
         else
             _priceTextField.text = self.articolo.price;
-        _descritpionTextField.text = self.articolo.description;
         
-        descrizione = self.articolo.description;
+        if(conBottene) {
+            
+            [_descritpionTextField setHidden:YES];;
+            descrizione = self.articolo.description;
+        }
+        else {
+            
+            [_buttonDescription setHidden:YES];
+            _descritpionTextField.text = self.articolo.description;
+        }
         [self.buttonDescription setTitle:self.articolo.description forState:nil];
     }
+}
+
+- (void)disabilitaTextEdit{
+    
+    [_codeTextField setEnabled:NO];
+    [_nameTextField setEnabled:NO];
+    [_categoryTextField setEnabled:NO];
+    [_priceTextField setEnabled:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
