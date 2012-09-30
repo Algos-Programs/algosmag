@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="961" y="-350"/>
         </scene>
-        <!--View Controller - Descizione-->
+        <!--Mag Descrizione View Controller - Descizione-->
         <scene sceneID="OA0-P6-OdS">
             <objects>
-                <viewController id="NsM-Ca-Hnx" sceneMemberID="viewController">
+                <viewController id="NsM-Ca-Hnx" customClass="MagDescrizioneViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d4z-OM-BpC">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -222,6 +222,9 @@
                     <navigationItem key="navigationItem" title="Descizione" id="P4S-2H-Cfc">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="X9J-Ex-dDT"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descrizioneTextField" destination="BSi-48-p6H" id="Kwm-XU-3ti"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lim-B6-Fe1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="89Z-D6-CxE"/>
@@ -378,6 +381,12 @@
                 <relationship kind="outlet" name="priceTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="MagDescrizioneViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MagDescrizioneViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="descrizioneTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="MagDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MagDetailViewController.h"/>
             <relationships>
@@ -406,6 +415,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hnb-9A-fjS"/>
+        <segue reference="sUo-NP-MxN"/>
     </inferredMetricsTieBreakers>
 </document>

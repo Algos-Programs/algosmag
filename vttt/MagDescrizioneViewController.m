@@ -7,6 +7,7 @@
 //
 
 #import "MagDescrizioneViewController.h"
+#import "MagMasterViewController.h"
 
 @interface MagDescrizioneViewController ()
 
@@ -14,6 +15,7 @@
 
 @implementation MagDescrizioneViewController
 
+@synthesize descrizioneTextField = _descrizioneTextField;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +28,7 @@
 - (void)viewDidLoad
 {
     
-    
+    _descrizioneTextField.text = [MagMasterViewController description];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -37,4 +39,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidUnload {
+    [self setDescrizioneTextField:nil];
+    [super viewDidUnload];
+}
 @end

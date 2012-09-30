@@ -10,4 +10,5 @@
 
 @interface MagDescrizioneViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *descrizioneTextField;
 @end

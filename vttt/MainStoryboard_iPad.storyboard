@@ -434,46 +434,6 @@
     <resources>
         <image name="Romania.png" width="256" height="256"/>
     </resources>
-    <classes>
-        <class className="MagAggiungiArticoloViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MagAggiungiArticoloViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="categoryButtonPressed:"/>
-                <relationship kind="action" name="saveButtonPressed:"/>
-                <relationship kind="outlet" name="codeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="descriptionTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="iconImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="priceTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MagCategoryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MagCategoryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="MagDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MagDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="categoryTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="codeTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="descritpionTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="priceTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MagMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MagMasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pressChageTypeListButton:"/>
-                <relationship kind="action" name="pressTypeListButton:"/>
-                <relationship kind="outlet" name="changeTypeListButton" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="typeListButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

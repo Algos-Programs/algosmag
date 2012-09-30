@@ -67,6 +67,8 @@ static NSString * description = @"";
         else
             _priceTextField.text = self.articolo.price;
         _descritpionTextField.text = self.articolo.description;
+        
+        description = self.articolo.description;
         [self.buttonDescription setTitle:self.articolo.description forState:nil];
     }
 }
