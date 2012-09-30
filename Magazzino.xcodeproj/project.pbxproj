@@ -36,6 +36,7 @@
 		FF50AE9D15FE4828009DA6C6 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF50AE9C15FE4827009DA6C6 /* background.jpg */; };
 		FF50AE9F15FE51AD009DA6C6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AE9E15FE51AC009DA6C6 /* icon.png */; };
 		FF50AEA115FE5228009DA6C6 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = FF50AEA015FE5228009DA6C6 /* icon_57x57.png */; };
+		FF858EEB1618A6DC00945618 /* MagDescrizioneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF858EEA1618A6DC00945618 /* MagDescrizioneViewController.m */; };
 		FF8B698C1614F1F700FEC2FA /* LibPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698B1614F1F700FEC2FA /* LibPlist.m */; };
 		FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B698F1614F5EB00FEC2FA /* LibArticolo.m */; };
 		FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */; };
@@ -92,6 +93,8 @@
 		FF50AE9C15FE4827009DA6C6 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		FF50AE9E15FE51AC009DA6C6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		FF50AEA015FE5228009DA6C6 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_57x57.png; path = ../icon_57x57.png; sourceTree = "<group>"; };
+		FF858EE91618A6DC00945618 /* MagDescrizioneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagDescrizioneViewController.h; sourceTree = "<group>"; };
+		FF858EEA1618A6DC00945618 /* MagDescrizioneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagDescrizioneViewController.m; sourceTree = "<group>"; };
 		FF8B698A1614F1F700FEC2FA /* LibPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibPlist.h; sourceTree = "<group>"; };
 		FF8B698B1614F1F700FEC2FA /* LibPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibPlist.m; sourceTree = "<group>"; };
 		FF8B698E1614F5EB00FEC2FA /* LibArticolo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibArticolo.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				FF8B69921614FDC900FEC2FA /* MagAggiungiArticoloViewController.m */,
 				FFF06C8616172979005C03D0 /* MagCategoryViewController.h */,
 				FFF06C8716172979005C03D0 /* MagCategoryViewController.m */,
+				FF858EE91618A6DC00945618 /* MagDescrizioneViewController.h */,
+				FF858EEA1618A6DC00945618 /* MagDescrizioneViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -400,6 +405,7 @@
 				FF8B69901614F5EB00FEC2FA /* LibArticolo.m in Sources */,
 				FF8B69931614FDC900FEC2FA /* MagAggiungiArticoloViewController.m in Sources */,
 				FFF06C8816172979005C03D0 /* MagCategoryViewController.m in Sources */,
+				FF858EEB1618A6DC00945618 /* MagDescrizioneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

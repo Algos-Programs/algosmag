@@ -82,11 +82,11 @@
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="21" customClass="MagDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="27">
-                                <rect key="frame" x="20" y="419" width="280" height="18"/>
+                                <rect key="frame" x="20" y="377" width="280" height="18"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
@@ -101,7 +101,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Codice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sjV-9x-m4E">
-                                <rect key="frame" x="20" y="71" width="53" height="21"/>
+                                <rect key="frame" x="20" y="71" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -185,6 +185,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26"/>
                     <connections>
+                        <outlet property="buttonDescription" destination="tvp-GQ-L2V" id="oDq-5d-zpz"/>
                         <outlet property="categoryTextField" destination="2F8-zy-7na" id="NGv-w6-Pu4"/>
                         <outlet property="codeTextField" destination="qml-7t-wfr" id="t6X-3A-EXA"/>
                         <outlet property="descritpionTextField" destination="pHV-Sz-Te1" id="JUX-aO-7N3"/>
@@ -202,11 +203,11 @@
             <objects>
                 <viewController id="NsM-Ca-Hnx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d4z-OM-BpC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" id="BSi-48-p6H">
-                                <rect key="frame" x="20" y="20" width="280" height="376"/>
+                                <rect key="frame" x="20" y="20" width="280" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -223,13 +224,9 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lim-B6-Fe1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="89Z-D6-CxE">
-                    <connections>
-                        <segue destination="21" kind="push" id="RwD-6H-cfc"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="89Z-D6-CxE"/>
             </objects>
-            <point key="canvasLocation" x="1427" y="-43"/>
+            <point key="canvasLocation" x="1577" y="9"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sNj-AS-MqU">
@@ -259,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tW8-Gp-pEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1425" y="-637"/>
+            <point key="canvasLocation" x="1427" y="-641"/>
         </scene>
         <!--Mag Aggiungi Articolo View Controller - Add Article-->
         <scene sceneID="wRO-Lq-guV">
@@ -384,6 +381,7 @@
         <class className="MagDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MagDetailViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="buttonDescription" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="categoryTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="codeTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="descritpionTextField" candidateClass="UITextField"/>
@@ -408,7 +406,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RwD-6H-cfc"/>
         <segue reference="hnb-9A-fjS"/>
     </inferredMetricsTieBreakers>
 </document>

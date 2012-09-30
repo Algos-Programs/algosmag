@@ -20,6 +20,11 @@
 @property (strong, nonatomic) IBOutlet UITextField *categoryTextField;
 @property (strong, nonatomic) IBOutlet UITextField *priceTextField;
 @property (strong, nonatomic) IBOutlet UITextField *descritpionTextField;
+@property (strong, nonatomic) IBOutlet UIButton *buttonDescription;
 
 @property (strong, nonatomic) Articolo *articolo;
+
++ (NSString *)descritpion;
++ (void)setDescription:(NSString *)str;
+
 @end

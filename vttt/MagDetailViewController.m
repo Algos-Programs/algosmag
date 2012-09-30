@@ -22,8 +22,22 @@
 @synthesize categoryTextField = _categoryTextField;
 @synthesize priceTextField = _priceTextField;
 @synthesize descritpionTextField = _descritpionTextField;
+@synthesize buttonDescription = _buttonDescription;
 
 @synthesize articolo = _articolo;
+
+static NSString * description = @"";
+
+
++ (NSString *)descritpion {
+    
+    return description;
+}
+
++ (void)setDescription:(NSString *)str {
+    
+    description = [[NSString alloc] initWithString:str];
+}
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -53,9 +67,7 @@
         else
             _priceTextField.text = self.articolo.price;
         _descritpionTextField.text = self.articolo.description;
-        
-        
-        //self.detailDescriptionLabel.text = [self.detailItem description];
+        [self.buttonDescription setTitle:self.articolo.description forState:nil];
     }
 }
 
@@ -107,6 +119,7 @@
     [self setCategoryTextField:nil];
     [self setPriceTextField:nil];
     [self setDescritpionTextField:nil];
+    [self setButtonDescription:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
